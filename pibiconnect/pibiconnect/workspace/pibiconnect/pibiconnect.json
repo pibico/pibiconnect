@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"WVCFXJAkCj\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">pibiConnect</span>\",\"col\":12}},{\"id\":\"VS2hoEeuZq\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN MQTT\",\"col\":12}}]",
+ "content": "[{\"id\":\"VS2hoEeuZq\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN MQTT\",\"col\":12}}]",
  "creation": "2024-05-25 18:46:45.884705",
  "custom_blocks": [
   {
@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "pibiConnect",
  "links": [],
- "modified": "2024-05-25 22:44:36.654554",
+ "modified": "2024-05-27 00:49:37.516666",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "pibiConnect",
