@@ -1,0 +1,41 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"WVCFXJAkCj\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">pibiConnect</span>\",\"col\":12}},{\"id\":\"VS2hoEeuZq\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN MQTT\",\"col\":12}}]",
+ "creation": "2024-05-25 18:46:45.884705",
+ "custom_blocks": [
+  {
+   "custom_block_name": "CN MQTT",
+   "label": "CN MQTT"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "workflow",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "pibiConnect",
+ "links": [],
+ "modified": "2024-05-25 22:44:36.654554",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "pibiConnect",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "MIoT Administrator"
+  },
+  {
+   "role": "MIoT User"
+  }
+ ],
+ "sequence_id": 4.0,
+ "shortcuts": [],
+ "title": "pibiConnect"
+}

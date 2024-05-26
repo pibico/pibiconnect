@@ -1,0 +1,152 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"oT2LY6d7HE\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">pibiConnect Settings</span>\",\"col\":12}},{\"id\":\"3zYvyao5BC\",\"type\":\"card\",\"data\":{\"card_name\":\"Documents\",\"col\":4}},{\"id\":\"zzfRi9K00M\",\"type\":\"card\",\"data\":{\"card_name\":\"Channels\",\"col\":4}}]",
+ "creation": "2024-05-25 18:46:45.967846",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "customization",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "pibiConnect Settings",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Documents",
+   "link_count": 7,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tipo de Panel",
+   "link_count": 0,
+   "link_to": "CN Dashboard Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cliente",
+   "link_count": 0,
+   "link_to": "CN Client",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lugar",
+   "link_count": 0,
+   "link_to": "CN Place",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Zona",
+   "link_count": 0,
+   "link_to": "CN Zone",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "UOM",
+   "link_count": 0,
+   "link_to": "CN UOM",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sensor Var",
+   "link_count": 0,
+   "link_to": "CN Sensor Var",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sensor Type",
+   "link_count": 0,
+   "link_to": "CN Sensor Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Channels",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Ajustes de SMS",
+   "link_count": 0,
+   "link_to": "SMS Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SMS Log",
+   "link_count": 0,
+   "link_to": "SMS Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Email Account",
+   "link_count": 0,
+   "link_to": "Email Account",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-05-25 20:32:29.691914",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "pibiConnect Settings",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "pibiConnect",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "MIoT Administrator"
+  }
+ ],
+ "sequence_id": 23.0,
+ "shortcuts": [],
+ "title": "pibiConnect Settings"
+}

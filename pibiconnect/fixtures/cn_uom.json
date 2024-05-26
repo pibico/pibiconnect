@@ -1,0 +1,122 @@
+[
+ {
+  "description": "Watts",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:40:50.782560",
+  "name": "W",
+  "title": "W"
+ },
+ {
+  "description": "milliamps",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:41:01.833480",
+  "name": "mA",
+  "title": "mA"
+ },
+ {
+  "description": "liter per minute",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:41:12.925310",
+  "name": "lpm",
+  "title": "lpm"
+ },
+ {
+  "description": "Boolean",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:41:24.049266",
+  "name": "boolean",
+  "title": "boolean"
+ },
+ {
+  "description": "liter",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:41:32.937504",
+  "name": "l",
+  "title": "l"
+ },
+ {
+  "description": "Index Air Quality",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:41:44.463111",
+  "name": "iaq",
+  "title": "iaq"
+ },
+ {
+  "description": "Ohms",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:41:53.876344",
+  "name": "Ohm",
+  "title": "Ohm"
+ },
+ {
+  "description": "hecto Pascal",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:42:08.889187",
+  "name": "hPa",
+  "title": "hPa"
+ },
+ {
+  "description": "Degrees Centigrates",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:42:24.052007",
+  "name": "C",
+  "title": "C"
+ },
+ {
+  "description": "Units",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:42:35.983011",
+  "name": "units",
+  "title": "units"
+ },
+ {
+  "description": "Latitude and Longitude",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:42:50.341174",
+  "name": "latlng",
+  "title": "latlng"
+ },
+ {
+  "description": "Speed",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:42:59.640646",
+  "name": "knot",
+  "title": "knot"
+ },
+ {
+  "description": "Volts",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:43:24.630761",
+  "name": "V",
+  "title": "V"
+ },
+ {
+  "description": "Percentage",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:43:17.730310",
+  "name": "%",
+  "title": "%"
+ },
+ {
+  "description": "Degrees",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:43:09.175843",
+  "name": "degrees",
+  "title": "degrees"
+ }
+]

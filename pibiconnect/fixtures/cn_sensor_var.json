@@ -1,0 +1,242 @@
+[
+ {
+  "chart_type": "None",
+  "description": null,
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:50:34.601502",
+  "name": "Power",
+  "title": "Power",
+  "uom": "W"
+ },
+ {
+  "chart_type": "None",
+  "description": "Battery Current",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:51:04.223861",
+  "name": "Current",
+  "title": "Current",
+  "uom": "mA"
+ },
+ {
+  "chart_type": "None",
+  "description": "Flow Meter in liters per minute",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:52:07.910704",
+  "name": "Flow",
+  "title": "Flow",
+  "uom": "lpm"
+ },
+ {
+  "chart_type": "None",
+  "description": "Status",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:52:25.243903",
+  "name": "Status",
+  "title": "Status",
+  "uom": "boolean"
+ },
+ {
+  "chart_type": "None",
+  "description": "Disk",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:52:39.388463",
+  "name": "Disk",
+  "title": "Disk",
+  "uom": "%"
+ },
+ {
+  "chart_type": "None",
+  "description": "Memory",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:52:55.205494",
+  "name": "Memory",
+  "title": "Memory",
+  "uom": "%"
+ },
+ {
+  "chart_type": "None",
+  "description": "Volume",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:53:10.215298",
+  "name": "Volume",
+  "title": "Volume",
+  "uom": "l"
+ },
+ {
+  "chart_type": "None",
+  "description": "Gas Resistance",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:53:26.243351",
+  "name": "Gas Resistance",
+  "title": "Gas Resistance",
+  "uom": "Ohm"
+ },
+ {
+  "chart_type": "None",
+  "description": "Index Air Quality",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:53:46.570145",
+  "name": "Iaq",
+  "title": "Iaq",
+  "uom": "iaq"
+ },
+ {
+  "chart_type": "None",
+  "description": "Humidity",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:54:02.742778",
+  "name": "Humidity",
+  "title": "Humidity",
+  "uom": "%"
+ },
+ {
+  "chart_type": "None",
+  "description": "Pressure",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:54:25.208125",
+  "name": "Pressure",
+  "title": "Pressure",
+  "uom": "hPa"
+ },
+ {
+  "chart_type": "None",
+  "description": "Temperature",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:54:39.656159",
+  "name": "Temperature",
+  "title": "Temperature",
+  "uom": "C"
+ },
+ {
+  "chart_type": "None",
+  "description": "Direction",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:54:59.794221",
+  "name": "Direction",
+  "title": "Direction",
+  "uom": "degrees"
+ },
+ {
+  "chart_type": "None",
+  "description": "Speed",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:55:18.759720",
+  "name": "Speed",
+  "title": "Speed",
+  "uom": "knot"
+ },
+ {
+  "chart_type": "None",
+  "description": "Battery Voltage",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:55:38.475658",
+  "name": "Voltage",
+  "title": "Voltage",
+  "uom": "V"
+ },
+ {
+  "chart_type": "None",
+  "description": "Roll",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:55:52.535553",
+  "name": "Roll",
+  "title": "Roll",
+  "uom": "degrees"
+ },
+ {
+  "chart_type": "None",
+  "description": "Pitch",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:56:09.759002",
+  "name": "Pitch",
+  "title": "Pitch",
+  "uom": "degrees"
+ },
+ {
+  "chart_type": "None",
+  "description": "Heading (Yaw)",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:56:29.849198",
+  "name": "Heading",
+  "title": "Heading",
+  "uom": "degrees"
+ },
+ {
+  "chart_type": "None",
+  "description": "Satellites in Costellation",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:56:50.752149",
+  "name": "Sats",
+  "title": "Sats",
+  "uom": "units"
+ },
+ {
+  "chart_type": "None",
+  "description": "Latitude, Longitude",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:57:12.524429",
+  "name": "Position",
+  "title": "Position",
+  "uom": "latlng"
+ },
+ {
+  "chart_type": "None",
+  "description": "Speed on Ground",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:57:34.061902",
+  "name": "Sog",
+  "title": "Sog",
+  "uom": "knot"
+ },
+ {
+  "chart_type": "None",
+  "description": "Course on Ground",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:57:57.420876",
+  "name": "Cog",
+  "title": "Cog",
+  "uom": "degrees"
+ },
+ {
+  "chart_type": "None",
+  "description": "Battery Charge",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:58:15.115232",
+  "name": "Charge",
+  "title": "Charge",
+  "uom": "%"
+ },
+ {
+  "chart_type": "None",
+  "description": "Input Voltage",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:58:33.001727",
+  "name": "Input",
+  "title": "Input",
+  "uom": "V"
+ }
+]

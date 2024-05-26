@@ -1,0 +1,393 @@
+[
+ {
+  "description": "Energy Auditor",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:09:19.604131",
+  "name": "energy",
+  "title": "energy",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "energy",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Current"
+   },
+   {
+    "description": null,
+    "parent": "energy",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Voltage"
+   },
+   {
+    "description": null,
+    "parent": "energy",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Power"
+   }
+  ]
+ },
+ {
+  "description": "Tapo Plug",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:09:48.385031",
+  "name": "plug",
+  "title": "plug",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "plug",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Status"
+   }
+  ]
+ },
+ {
+  "description": "Wind",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:11:01.824871",
+  "name": "wind",
+  "title": "wind",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "wind",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Direction"
+   },
+   {
+    "description": null,
+    "parent": "wind",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Speed"
+   }
+  ]
+ },
+ {
+  "description": "INA219",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:11:21.457485",
+  "name": "v",
+  "title": "v",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "v",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Charge"
+   },
+   {
+    "description": null,
+    "parent": "v",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Voltage"
+   }
+  ]
+ },
+ {
+  "description": "Door or Window Sensor",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:11:47.334027",
+  "name": "door",
+  "title": "door",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "door",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Status"
+   }
+  ]
+ },
+ {
+  "description": "Battery",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:12:14.525789",
+  "name": "batt",
+  "title": "batt",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "batt",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Current"
+   },
+   {
+    "description": null,
+    "parent": "batt",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Voltage"
+   },
+   {
+    "description": null,
+    "parent": "batt",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Charge"
+   }
+  ]
+ },
+ {
+  "description": "YFS401",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:12:42.076618",
+  "name": "flow",
+  "title": "flow",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "flow",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Flow"
+   }
+  ]
+ },
+ {
+  "description": "K6/K6P Beacon - AM2302",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:13:14.326437",
+  "name": "th",
+  "title": "th",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "th",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Temperature"
+   },
+   {
+    "description": null,
+    "parent": "th",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Humidity"
+   }
+  ]
+ },
+ {
+  "description": "UPS",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:13:38.136266",
+  "name": "power",
+  "title": "power",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "power",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Voltage"
+   }
+  ]
+ },
+ {
+  "description": "Relay",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:13:57.159719",
+  "name": "relay",
+  "title": "relay",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "relay",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Status"
+   }
+  ]
+ },
+ {
+  "description": "CPU",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:17:17.517276",
+  "name": "cpu",
+  "title": "cpu",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "cpu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Temperature"
+   },
+   {
+    "description": null,
+    "parent": "cpu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Memory"
+   },
+   {
+    "description": null,
+    "parent": "cpu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Disk"
+   }
+  ]
+ },
+ {
+  "description": "DS18B20",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:17:33.960168",
+  "name": "temp",
+  "title": "temp",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "temp",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Temperature"
+   }
+  ]
+ },
+ {
+  "description": "HRSC04",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:17:54.331192",
+  "name": "ut",
+  "title": "ut",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "ut",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Volume"
+   }
+  ]
+ },
+ {
+  "description": "BME680",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:30:06.857672",
+  "name": "tphg",
+  "title": "tphg",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "tphg",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Temperature"
+   },
+   {
+    "description": null,
+    "parent": "tphg",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Pressure"
+   },
+   {
+    "description": null,
+    "parent": "tphg",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Humidity"
+   },
+   {
+    "description": null,
+    "parent": "tphg",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Iaq"
+   }
+  ]
+ },
+ {
+  "description": "IMU ICM20948",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:30:48.261672",
+  "name": "imu",
+  "title": "imu",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "imu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Pitch"
+   },
+   {
+    "description": null,
+    "parent": "imu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Roll"
+   },
+   {
+    "description": null,
+    "parent": "imu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Heading"
+   }
+  ]
+ },
+ {
+  "description": "GPS SIM868",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:31:17.758858",
+  "name": "gps",
+  "title": "gps",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "gps",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Position"
+   },
+   {
+    "description": null,
+    "parent": "gps",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Cog"
+   },
+   {
+    "description": null,
+    "parent": "gps",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Sog"
+   },
+   {
+    "description": null,
+    "parent": "gps",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Sats"
+   }
+  ]
+ }
+]

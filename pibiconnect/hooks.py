@@ -133,9 +133,9 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+#scheduler_events = {
 # 	"all": [
-# 		"pibiconnect.tasks.all"
+# 		"pibiconnect.pibiconnect.mqtt_subscriber.start_mqtt_subscriber_job"
 # 	],
 # 	"daily": [
 # 		"pibiconnect.tasks.daily"
@@ -149,7 +149,7 @@ app_license = "mit"
 # 	"monthly": [
 # 		"pibiconnect.tasks.monthly"
 # 	],
-# }
+#}
 
 # Testing
 # -------
@@ -227,3 +227,26 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+#after_migrate = ["pibiconnect.pibiconnect.mqtt_subscriber.start_mqtt_subscriber_job"]
+
+fixtures = [
+  {
+    "dt": "Workspace",
+    "filters": [
+      {"module": [ "in", ["pibiConnect"] ]}
+    ]
+  },
+  {
+    "dt": "Role",
+    "filters": [
+      {"name": [ "in", ["MIoT User", "MIoT Administrator"] ]}
+    ]
+  },
+  "CN Dashboard Type",
+  "CN Place",
+  "CN Zone",
+  "CN Client",
+  "CN UOM",
+  "CN Sensor Var",
+  "CN Sensor Type"
+]

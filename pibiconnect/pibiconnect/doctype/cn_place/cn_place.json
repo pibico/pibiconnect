@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:title",
+ "creation": "2024-05-24 18:14:00.335087",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "barcode",
+  "title",
+  "description",
+  "column_break_emjl",
+  "client",
+  "location"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_emjl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "default": "{\n \"type\":\"FeatureCollection\",\n \"features\":[\n   {\n    \"type\":\"Feature\",\n    \"properties\":{},\n    \"geometry\":{\n     \"type\":\"Point\",\n     \"coordinates\":[-5.65953,43.53763]\n     }\n   }\n  ]\n}",
+   "fieldname": "location",
+   "fieldtype": "Geolocation",
+   "label": "Location"
+  },
+  {
+   "description": "Identification code in Uppercase: Country Abbreviation (2 digits) plus Tax VAT",
+   "fieldname": "barcode",
+   "fieldtype": "Barcode",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Code",
+   "length": 13
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "CN Client"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-25 10:10:38.663516",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "CN Place",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "MIoT Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "MIoT User",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

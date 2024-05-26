@@ -1,0 +1,34 @@
+[
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "CN Dashboard Type",
+  "modified": "2024-05-24 17:04:59.455517",
+  "name": "Maintenance",
+  "title": "Maintenance"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "CN Dashboard Type",
+  "modified": "2024-05-24 17:05:07.786543",
+  "name": "Domotic",
+  "title": "Domotic"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "CN Dashboard Type",
+  "modified": "2024-05-24 17:05:15.187663",
+  "name": "Home Assistant",
+  "title": "Home Assistant"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "CN Dashboard Type",
+  "modified": "2024-05-24 17:05:23.273860",
+  "name": "Develop",
+  "title": "Develop"
+ }
+]
