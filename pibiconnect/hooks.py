@@ -237,6 +237,12 @@ fixtures = [
     ]
   },
   {
+    "dt": "Custom HTML Block",
+    "filters": [
+      {"name": [ "like", "CN%" ]}
+    ]
+  },
+  {
     "dt": "Role",
     "filters": [
       {"name": [ "in", ["MIoT User", "MIoT Administrator"] ]}
