@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 import frappe
 from frappe.utils.background_jobs import enqueue
+import json
 
 # MQTT settings
 MQTT_BROKER = frappe.conf.get("mqtt_gateway")
@@ -86,3 +87,41 @@ def status():
     global client
     is_connected = client is not None and client.is_connected() if client else False
     return {'status': 'running' if is_connected else 'stopped'}
+
+def setup_mqtt_client_args(data):
+    global client
+    client = mqtt.Client()
+    if data.get('username') and data.get('password'):
+      client.username_pw_set(data['username'], data['password'])
+    client.user_data_set({'topics': data['topics_table']})
+    client.on_connect = on_connect
+    client.on_message = on_message
+    client.on_disconnect = on_disconnect
+
+    if data.get('validate_cert'):
+        client.tls_set()  # Add appropriate arguments if necessary
+
+def mqtt_client_loop_args(data):
+    if isinstance(data, str):
+        data = json.loads(data)  # Deserialize the JSON data if it's a string
+    global client
+    if client is None:
+        setup_mqtt_client_args(data)
+    try:
+        client.connect(data['host'], int(data['port']), 60)
+        client.loop_forever()
+    except Exception as e:
+        frappe.logger().error(f"Error connecting to MQTT broker: {e}")
+
+@frappe.whitelist()
+def start_mqtt_args(data):
+    if isinstance(data, str):
+        data = json.loads(data)  # Ensure the data is deserialized
+    job = enqueue(
+        'pibiconnect.pibiconnect.mqtt_client.mqtt_client_loop_args',
+        data=json.dumps(data),  # Serialize the data as JSON
+        timeout='5',
+        queue='short',
+        job_name='mqtt_start_job'
+    )
+    return {'status': 'started', 'job_id': job.id}
