@@ -38,7 +38,8 @@ def on_disconnect(client, userdata, rc):
 def setup_mqtt_client():
     global client
     client = mqtt.Client()
-    client.username_pw_set(MQTT_USERNAME, MQTT_PASSWORD)
+    if MQTT_USERNAME and MQTT_PASSWORD:
+      client.username_pw_set(MQTT_USERNAME, MQTT_PASSWORD)
     client.on_connect = on_connect
     client.on_message = on_message
     client.on_disconnect = on_disconnect
