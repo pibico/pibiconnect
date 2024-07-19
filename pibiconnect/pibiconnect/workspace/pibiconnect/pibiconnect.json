@@ -1,11 +1,11 @@
 {
  "charts": [],
- "content": "[{\"id\":\"VS2hoEeuZq\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN MQTT Explorer\",\"col\":12}}]",
- "creation": "2024-05-25 18:46:45.884705",
+ "content": "[{\"id\":\"KCn630HHFb\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN Sensor Manager\",\"col\":12}}]",
+ "creation": "2024-07-11 08:24:38.013268",
  "custom_blocks": [
   {
-   "custom_block_name": "CN MQTT Explorer",
-   "label": "CN MQTT Explorer"
+   "custom_block_name": "CN Sensor Manager",
+   "label": "CN Sensor Manager"
   }
  ],
  "docstatus": 0,
@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "pibiConnect",
  "links": [],
- "modified": "2024-05-27 19:58:36.890516",
+ "modified": "2024-07-19 21:46:29.239228",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "pibiConnect",

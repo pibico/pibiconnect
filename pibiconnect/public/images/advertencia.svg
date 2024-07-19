@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2700"
+   xml:space="preserve"
+   width="682.66669"
+   height="682.66669"
+   viewBox="0 0 682.66669 682.66669"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs2704"><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2714"><path
+         d="M 0,512 H 512 V 0 H 0 Z"
+         id="path2712" /></clipPath></defs><g
+     id="g2706"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,682.66667)"><g
+       id="g2708"><g
+         id="g2710"
+         clip-path="url(#clipPath2714)"><g
+           id="g2716"
+           transform="translate(256,231.9004)"><path
+             d="m 0,0 c 0,0 -32.134,78.727 -32.134,112.466 0,17.738 14.397,32.134 32.134,32.134 17.737,0 32.134,-14.396 32.134,-32.134 C 32.134,78.727 0,0 0,0 Z"
+             style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path2718" /></g><g
+           id="g2720"
+           transform="translate(256,167.6338)"><path
+             d="m 0,0 c 17.737,0 32.134,-14.396 32.134,-32.134 0,-17.737 -14.397,-32.134 -32.134,-32.134 -17.737,0 -32.134,14.397 -32.134,32.134 C -32.134,-14.396 -17.737,0 0,0 Z"
+             style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path2722" /></g><g
+           id="g2724"
+           transform="translate(200.6182,440.9434)"><path
+             d="m 0,0 c 11.455,19.786 32.56,31.957 55.382,31.957 22.822,0 43.927,-12.171 55.382,-31.957 50.882,-87.82 125.923,-217.342 176.958,-305.427 11.504,-19.859 11.551,-44.36 0.121,-64.251 -11.432,-19.898 -32.6,-32.166 -55.503,-32.166 h -353.916 c -22.903,0 -44.071,12.268 -55.503,32.166 -11.431,19.891 -11.383,44.392 0.121,64.251 C -125.923,-217.342 -50.883,-87.82 0,0 Z"
+             style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path2726" /></g></g></g></g></svg>

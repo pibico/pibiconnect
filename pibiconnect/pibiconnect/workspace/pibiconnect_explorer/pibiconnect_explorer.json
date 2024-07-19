@@ -1,0 +1,41 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"lRvW9JcEET\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN MQTT Explorer\",\"col\":12}}]",
+ "creation": "2024-07-19 21:34:07.941691",
+ "custom_blocks": [
+  {
+   "custom_block_name": "CN MQTT Explorer",
+   "label": "CN MQTT Explorer"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "integration",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "pibiConnect Explorer",
+ "links": [],
+ "modified": "2024-07-19 21:38:51.525285",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "pibiConnect Explorer",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "pibiConnect",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "MIoT Administrator"
+  },
+  {
+   "role": "MIoT User"
+  }
+ ],
+ "sequence_id": 5.0,
+ "shortcuts": [],
+ "title": "pibiConnect Explorer"
+}
