@@ -219,37 +219,6 @@
   ]
  },
  {
-  "description": "CPU",
-  "docstatus": 0,
-  "doctype": "CN Sensor Type",
-  "modified": "2024-05-24 20:17:17.517276",
-  "name": "cpu",
-  "title": "cpu",
-  "var_item": [
-   {
-    "description": null,
-    "parent": "cpu",
-    "parentfield": "var_item",
-    "parenttype": "CN Sensor Type",
-    "sensor_var": "Temperature"
-   },
-   {
-    "description": null,
-    "parent": "cpu",
-    "parentfield": "var_item",
-    "parenttype": "CN Sensor Type",
-    "sensor_var": "Memory"
-   },
-   {
-    "description": null,
-    "parent": "cpu",
-    "parentfield": "var_item",
-    "parenttype": "CN Sensor Type",
-    "sensor_var": "Disk"
-   }
-  ]
- },
- {
   "description": "DS18B20",
   "docstatus": 0,
   "doctype": "CN Sensor Type",
@@ -387,6 +356,85 @@
     "parentfield": "var_item",
     "parenttype": "CN Sensor Type",
     "sensor_var": "Sats"
+   }
+  ]
+ },
+ {
+  "description": "Voltage",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-07-22 14:32:51.284170",
+  "name": "uni",
+  "title": "uni",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "uni",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Voltage"
+   },
+   {
+    "description": null,
+    "parent": "uni",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Current"
+   },
+   {
+    "description": null,
+    "parent": "uni",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Status"
+   }
+  ]
+ },
+ {
+  "description": "ModBus Sensor",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-07-22 14:38:44.467405",
+  "name": "row",
+  "title": "row",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "row",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Current"
+   }
+  ]
+ },
+ {
+  "description": "CPU",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:17:17.517276",
+  "name": "cpu",
+  "title": "cpu",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "cpu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Temperature"
+   },
+   {
+    "description": null,
+    "parent": "cpu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Memory"
+   },
+   {
+    "description": null,
+    "parent": "cpu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Disk"
    }
   ]
  }

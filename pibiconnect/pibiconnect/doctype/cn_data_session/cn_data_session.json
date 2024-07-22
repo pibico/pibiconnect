@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{title}-{session_type}",
+ "creation": "2024-07-22 17:05:36.246422",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "session_type",
+  "is_active",
+  "recording",
+  "column_break_veok",
+  "cellebration_date",
+  "instructors",
+  "participants",
+  "column_break_rsuu",
+  "description",
+  "section_break_lmtg",
+  "session_item"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "session_type",
+   "fieldtype": "Link",
+   "label": "Session Type",
+   "options": "CN Dashboard Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "default": "0",
+   "fieldname": "recording",
+   "fieldtype": "Check",
+   "label": "Recording"
+  },
+  {
+   "fieldname": "column_break_veok",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cellebration_date",
+   "fieldtype": "Datetime",
+   "label": "Cellebration Start Date"
+  },
+  {
+   "fieldname": "instructors",
+   "fieldtype": "Data",
+   "label": "Instructors"
+  },
+  {
+   "fieldname": "participants",
+   "fieldtype": "Int",
+   "label": "Participants Number"
+  },
+  {
+   "fieldname": "column_break_rsuu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_lmtg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "session_item",
+   "fieldtype": "Table",
+   "label": "Session Items",
+   "options": "CN Session Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-22 17:13:30.953312",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "CN Data Session",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

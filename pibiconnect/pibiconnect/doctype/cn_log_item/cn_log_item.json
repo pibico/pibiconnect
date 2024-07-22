@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-22 16:48:00.522012",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sensor_var",
+  "uom",
+  "column_break_cywk",
+  "value",
+  "data_date",
+  "column_break_skmb",
+  "chart_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "sensor_var",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sensor Var",
+   "options": "CN Sensor Var"
+  },
+  {
+   "fetch_from": "sensor_var.uom",
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "label": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "chart_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Chart Type"
+  },
+  {
+   "fieldname": "column_break_cywk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "value",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Value"
+  },
+  {
+   "fieldname": "data_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Data Date"
+  },
+  {
+   "fieldname": "column_break_skmb",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-22 16:50:30.172412",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "CN Log Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

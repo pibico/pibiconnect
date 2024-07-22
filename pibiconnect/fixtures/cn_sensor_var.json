@@ -11,16 +11,6 @@
  },
  {
   "chart_type": "None",
-  "description": "Battery Current",
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-05-24 19:51:04.223861",
-  "name": "Current",
-  "title": "Current",
-  "uom": "mA"
- },
- {
-  "chart_type": "None",
   "description": "Flow Meter in liters per minute",
   "docstatus": 0,
   "doctype": "CN Sensor Var",
@@ -28,36 +18,6 @@
   "name": "Flow",
   "title": "Flow",
   "uom": "lpm"
- },
- {
-  "chart_type": "None",
-  "description": "Status",
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-05-24 19:52:25.243903",
-  "name": "Status",
-  "title": "Status",
-  "uom": "boolean"
- },
- {
-  "chart_type": "None",
-  "description": "Disk",
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-05-24 19:52:39.388463",
-  "name": "Disk",
-  "title": "Disk",
-  "uom": "%"
- },
- {
-  "chart_type": "None",
-  "description": "Memory",
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-05-24 19:52:55.205494",
-  "name": "Memory",
-  "title": "Memory",
-  "uom": "%"
  },
  {
   "chart_type": "None",
@@ -111,16 +71,6 @@
  },
  {
   "chart_type": "None",
-  "description": "Temperature",
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-05-24 19:54:39.656159",
-  "name": "Temperature",
-  "title": "Temperature",
-  "uom": "C"
- },
- {
-  "chart_type": "None",
   "description": "Direction",
   "docstatus": 0,
   "doctype": "CN Sensor Var",
@@ -138,16 +88,6 @@
   "name": "Speed",
   "title": "Speed",
   "uom": "knot"
- },
- {
-  "chart_type": "None",
-  "description": "Battery Voltage",
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-05-24 19:55:38.475658",
-  "name": "Voltage",
-  "title": "Voltage",
-  "uom": "V"
  },
  {
   "chart_type": "None",
@@ -237,6 +177,66 @@
   "modified": "2024-05-24 19:58:33.001727",
   "name": "Input",
   "title": "Input",
+  "uom": "V"
+ },
+ {
+  "chart_type": "None",
+  "description": "Status",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:52:25.243903",
+  "name": "Status",
+  "title": "Status",
+  "uom": "boolean"
+ },
+ {
+  "chart_type": "None",
+  "description": "Disk",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:52:39.388463",
+  "name": "Disk",
+  "title": "Disk",
+  "uom": "%"
+ },
+ {
+  "chart_type": "None",
+  "description": "Memory",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:52:55.205494",
+  "name": "Memory",
+  "title": "Memory",
+  "uom": "%"
+ },
+ {
+  "chart_type": "None",
+  "description": "Temperature",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:54:39.656159",
+  "name": "Temperature",
+  "title": "Temperature",
+  "uom": "C"
+ },
+ {
+  "chart_type": "None",
+  "description": "Battery Current",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:51:04.223861",
+  "name": "Current",
+  "title": "Current",
+  "uom": "mA"
+ },
+ {
+  "chart_type": "None",
+  "description": "Battery Voltage",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:55:38.475658",
+  "name": "Voltage",
+  "title": "Voltage",
   "uom": "V"
  }
 ]

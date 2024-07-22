@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-22 12:56:42.007044",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sensor_var",
+  "uom",
+  "alert_cooldown",
+  "column_break_ksce",
+  "low_value",
+  "alert_low",
+  "active_low",
+  "warning_disabled",
+  "column_break_smmd",
+  "high_value",
+  "alert_high",
+  "active_high",
+  "last_alert_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "sensor_var",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sensor Var",
+   "options": "CN Sensor Var",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "sensor_var.uom",
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "UOM",
+   "read_only": 1
+  },
+  {
+   "description": "seconds after the first alert not to send more alerts",
+   "fieldname": "alert_cooldown",
+   "fieldtype": "Int",
+   "label": "Alert Cooldown"
+  },
+  {
+   "fieldname": "column_break_ksce",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "low_value",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Low Value",
+   "precision": "3"
+  },
+  {
+   "default": "0",
+   "fieldname": "alert_low",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Alert Low"
+  },
+  {
+   "default": "0",
+   "fieldname": "active_low",
+   "fieldtype": "Check",
+   "label": "Active Low"
+  },
+  {
+   "default": "0",
+   "fieldname": "warning_disabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Warning Disabled"
+  },
+  {
+   "fieldname": "column_break_smmd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "high_value",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "High Value",
+   "precision": "3"
+  },
+  {
+   "default": "0",
+   "fieldname": "alert_high",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Alert High"
+  },
+  {
+   "default": "0",
+   "fieldname": "active_high",
+   "fieldtype": "Check",
+   "label": "Active High"
+  },
+  {
+   "fieldname": "last_alert_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Last Alert Time"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-22 13:03:40.957229",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "CN Alert Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

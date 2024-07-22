@@ -1,0 +1,269 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:device_shortcut",
+ "creation": "2024-07-22 13:20:42.713023",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "device_shortcut",
+  "hostname",
+  "alias",
+  "disabled",
+  "column_break_laav",
+  "place",
+  "place_name",
+  "assigned_to",
+  "column_break_lufh",
+  "last_seen",
+  "connected",
+  "section_break_ourc",
+  "notes",
+  "column_break_cnul",
+  "location",
+  "sensor_details_tab",
+  "sensor_info_section",
+  "sensor_type",
+  "is_gateway",
+  "local_url",
+  "serial",
+  "column_break_ftgp",
+  "wifi_mac",
+  "ble_mac_address",
+  "ip",
+  "current_data",
+  "data_item",
+  "alert_info_tab",
+  "warning_channels_section",
+  "warning_item",
+  "alert_thresholds_section",
+  "alert_item"
+ ],
+ "fields": [
+  {
+   "fieldname": "device_shortcut",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Device Shortcut",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "hostname",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Hostname",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "alias",
+   "fieldtype": "Data",
+   "label": "Alias"
+  },
+  {
+   "fieldname": "place",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Place",
+   "options": "CN Place"
+  },
+  {
+   "fetch_from": "place.description",
+   "fieldname": "place_name",
+   "fieldtype": "Data",
+   "label": "Place Name"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "Assigned To",
+   "options": "CN Client",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_laav",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lufh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_seen",
+   "fieldtype": "Datetime",
+   "label": "Last Seen"
+  },
+  {
+   "default": "0",
+   "fieldname": "connected",
+   "fieldtype": "Check",
+   "label": "Connected"
+  },
+  {
+   "fieldname": "sensor_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sensor Details"
+  },
+  {
+   "fieldname": "sensor_info_section",
+   "fieldtype": "Section Break",
+   "label": "Sensor Info"
+  },
+  {
+   "fieldname": "sensor_type",
+   "fieldtype": "Link",
+   "label": "Sensor Type",
+   "options": "CN Sensor Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_gateway",
+   "fieldtype": "Check",
+   "label": "Is Gateway"
+  },
+  {
+   "fieldname": "local_url",
+   "fieldtype": "Data",
+   "label": "Local URL"
+  },
+  {
+   "fieldname": "serial",
+   "fieldtype": "Data",
+   "label": "Serial"
+  },
+  {
+   "fieldname": "column_break_ftgp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "wifi_mac",
+   "fieldtype": "Data",
+   "label": "WiFi MAC Address"
+  },
+  {
+   "fieldname": "ble_mac_address",
+   "fieldtype": "Data",
+   "label": "BLE MAC Address"
+  },
+  {
+   "fieldname": "ip",
+   "fieldtype": "Data",
+   "label": "IP Connection"
+  },
+  {
+   "fieldname": "section_break_ourc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fetch_from": "place.location",
+   "fieldname": "location",
+   "fieldtype": "Geolocation",
+   "label": "Location"
+  },
+  {
+   "fieldname": "current_data",
+   "fieldtype": "Section Break",
+   "label": "Current Data"
+  },
+  {
+   "fieldname": "data_item",
+   "fieldtype": "Table",
+   "label": "Data Items",
+   "options": "CN Data Item"
+  },
+  {
+   "fieldname": "alert_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Alert Info"
+  },
+  {
+   "fieldname": "warning_channels_section",
+   "fieldtype": "Section Break",
+   "label": "Warning Channels"
+  },
+  {
+   "fieldname": "warning_item",
+   "fieldtype": "Table",
+   "label": "Warning Items",
+   "options": "CN Warning Item"
+  },
+  {
+   "fieldname": "alert_thresholds_section",
+   "fieldtype": "Section Break",
+   "label": "Alert Thresholds"
+  },
+  {
+   "fieldname": "alert_item",
+   "fieldtype": "Table",
+   "label": "Alert Items",
+   "options": "CN Alert Item"
+  },
+  {
+   "fieldname": "column_break_cnul",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-22 13:47:56.319605",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "CN Device",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "MIoT Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "MIoT User",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

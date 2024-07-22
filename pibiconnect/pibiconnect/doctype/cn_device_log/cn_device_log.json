@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{YY}{MM}{DD}_{device}-{##}",
+ "creation": "2024-07-22 17:15:48.046416",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "device",
+  "data_session",
+  "column_break_mfen",
+  "session_type",
+  "date",
+  "dashboard_section",
+  "main_chart",
+  "main_pic",
+  "column_break_rnox",
+  "second_chart",
+  "second_pic",
+  "column_break_vgso",
+  "move",
+  "log_data_tab",
+  "log_item"
+ ],
+ "fields": [
+  {
+   "fieldname": "device",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Device",
+   "options": "CN Device"
+  },
+  {
+   "fieldname": "data_session",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Data Session",
+   "options": "CN Data Session"
+  },
+  {
+   "fieldname": "column_break_mfen",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "data_session.session_type",
+   "fieldname": "session_type",
+   "fieldtype": "Data",
+   "label": "Session Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "dashboard_section",
+   "fieldtype": "Section Break",
+   "label": "Dashboard"
+  },
+  {
+   "fieldname": "main_chart",
+   "fieldtype": "HTML",
+   "label": "Main Chart"
+  },
+  {
+   "fieldname": "main_pic",
+   "fieldtype": "Attach Image",
+   "label": "Chart 1 to Pic"
+  },
+  {
+   "fieldname": "column_break_rnox",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "second_chart",
+   "fieldtype": "HTML",
+   "label": "Second Chart"
+  },
+  {
+   "fieldname": "second_pic",
+   "fieldtype": "Attach Image",
+   "label": "Chart 2 to Pic"
+  },
+  {
+   "fieldname": "column_break_vgso",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "move",
+   "fieldtype": "Geolocation",
+   "label": "Move"
+  },
+  {
+   "fieldname": "log_data_tab",
+   "fieldtype": "Tab Break",
+   "label": "Log Data"
+  },
+  {
+   "fieldname": "log_item",
+   "fieldtype": "Table",
+   "label": "Log Item",
+   "options": "CN Log Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-22 17:22:32.237608",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "CN Device Log",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "MIoT Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "MIoT User",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

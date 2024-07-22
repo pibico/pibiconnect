@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-22 16:51:52.239597",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sender_name",
+  "sent_on",
+  "column_break_mcvp",
+  "message",
+  "section_break_rmok",
+  "no_of_requested_sms",
+  "requested_numbers",
+  "column_break_loex",
+  "no_of_sent_sms",
+  "sent_to"
+ ],
+ "fields": [
+  {
+   "fieldname": "sender_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sender Name"
+  },
+  {
+   "fieldname": "sent_on",
+   "fieldtype": "Date",
+   "label": "Sent On"
+  },
+  {
+   "fieldname": "column_break_mcvp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Small Text",
+   "label": "Message"
+  },
+  {
+   "fieldname": "section_break_rmok",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "no_of_requested_sms",
+   "fieldtype": "Int",
+   "label": "No of Requested SMS"
+  },
+  {
+   "fieldname": "requested_numbers",
+   "fieldtype": "Code",
+   "label": "Requested Numbers"
+  },
+  {
+   "fieldname": "column_break_loex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_of_sent_sms",
+   "fieldtype": "Int",
+   "label": "No of Sent SMS"
+  },
+  {
+   "fieldname": "sent_to",
+   "fieldtype": "Code",
+   "label": "Sent To"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-22 16:54:45.157348",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "CN SMS Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

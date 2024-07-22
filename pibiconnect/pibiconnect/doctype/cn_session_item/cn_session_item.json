@@ -1,0 +1,45 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-22 17:00:45.706489",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "device",
+  "column_break_vwyi",
+  "place"
+ ],
+ "fields": [
+  {
+   "fieldname": "device",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Device",
+   "options": "CN Device"
+  },
+  {
+   "fieldname": "column_break_vwyi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "device.place",
+   "fieldname": "place",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Place"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-22 17:01:48.149035",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "CN Session Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

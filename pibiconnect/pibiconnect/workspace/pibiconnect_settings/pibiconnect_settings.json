@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"oT2LY6d7HE\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">pibiConnect Settings</span>\",\"col\":12}},{\"id\":\"3zYvyao5BC\",\"type\":\"card\",\"data\":{\"card_name\":\"Documents\",\"col\":4}},{\"id\":\"zzfRi9K00M\",\"type\":\"card\",\"data\":{\"card_name\":\"Channels\",\"col\":4}}]",
+ "content": "[{\"id\":\"oT2LY6d7HE\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">pibiConnect Settings</span>\",\"col\":12}},{\"id\":\"pIx8tR6pBh\",\"type\":\"card\",\"data\":{\"card_name\":\"Devices\",\"col\":4}},{\"id\":\"3zYvyao5BC\",\"type\":\"card\",\"data\":{\"card_name\":\"Documents\",\"col\":4}},{\"id\":\"zzfRi9K00M\",\"type\":\"card\",\"data\":{\"card_name\":\"Channels\",\"col\":4}}]",
  "creation": "2024-07-11 08:24:38.103387",
  "custom_blocks": [],
  "docstatus": 0,
@@ -16,8 +16,18 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Alert Log",
+   "link_count": 0,
+   "link_to": "CN Alert Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Documents",
-   "link_count": 7,
+   "link_count": 8,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -95,8 +105,67 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Alert Log",
+   "link_count": 0,
+   "link_to": "CN Alert Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Devices",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Data Session",
+   "link_count": 0,
+   "link_to": "CN Data Session",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Device",
+   "link_count": 0,
+   "link_to": "CN Device",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Alert Log",
+   "link_count": 0,
+   "link_to": "CN Alert Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Device Log",
+   "link_count": 0,
+   "link_to": "CN Device Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Channels",
-   "link_count": 3,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -110,9 +179,49 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Communication",
+   "link_count": 0,
+   "link_to": "Communication",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SMS Settings",
+   "link_count": 0,
+   "link_to": "SMS Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SMS Log",
+   "link_count": 0,
+   "link_to": "CN SMS Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contact",
+   "link_count": 0,
+   "link_to": "Contact",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-07-19 21:38:00.990091",
+ "modified": "2024-07-22 17:24:44.534882",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "pibiConnect Settings",
