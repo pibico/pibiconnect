@@ -46,7 +46,6 @@
    "fieldtype": "Data",
    "in_filter": 1,
    "in_global_search": 1,
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Device Shortcut",
    "reqd": 1,
@@ -55,7 +54,6 @@
   {
    "fieldname": "hostname",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Hostname",
    "reqd": 1
   },
@@ -87,6 +85,7 @@
   {
    "fieldname": "assigned_to",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Assigned To",
    "options": "CN Client",
    "reqd": 1
@@ -221,7 +220,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-22 13:47:56.319605",
+ "modified": "2024-07-22 19:25:38.099868",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "CN Device",
