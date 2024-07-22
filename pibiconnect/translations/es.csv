@@ -81,3 +81,18 @@ Edit Filters,Editar Filtros
 List View,Vista de Lista
 Report View,Vista de Informe
 Dashboard View,Vista de Panel
+Devices,Dispositivos
+Channels,Canales
+Develop,Desarrollo
+Domotic,Domótica
+Maintenance,Mantenimiento
+Roles & Permissions,Roles y Permisos
+Connections,Conexiones
+Workspace,Espacio de Trabajo
+Default Workspace,Espacio de Trabajo por Defecto
+"If left empty, the default workspace will be the last visited workspace","Si se deja vacío, el espacio por defecto será el último visitado"
+User Details,Detalles de Usuario
+Basic Info,Información Básica
+pibiConnect,ConectaIoT
+pibiConnect Explorer,Navegador ConectaIoT
+pibiConnect Settings,Ajustes ConectaIoT
