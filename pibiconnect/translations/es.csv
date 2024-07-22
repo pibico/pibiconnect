@@ -20,3 +20,60 @@ Sensor Type,Tipo de Sensor
 Documents,Documentos
 CN MQTT Settings,Ajustes MQTT
 MQTT Settings,Ajustes MQTT
+Place Name,Nombre del Lugar
+Last Seen,Ultima Vista
+Connected,Conectado
+Sensor Details,Detalles de Sensor
+Alert Info,Información Alertas
+Notes,Notas
+IP Connection,Conexión IP
+WiFi MAC Address,Dirección MAC WiFi
+BLE MAC Address,Dirección MAC BLE
+is Gateway,Es Pasarela
+Local URL,URL Local
+Serial,N.º Serie
+Current Data,Datos Actuales
+Data Items,Datos
+Last Recorded,Ultimo Registro
+Reading,Lectura
+Warning Items,Elementos Avisos
+Alert Thresholds,Umbrales Alertas
+Alert Items,Elementos Alerta
+Channel Type,Tipo de Canal
+Mobile,Móvil
+Alert Cooldown,Tiempo de Enfriamiento
+seconds after the first alert not to send more alerts,segundos después de la primera alerta para que no se envien más
+Low Value,Valor Bajo
+Alert Low,Bajo Nivel Alerta
+Active Low,Alerta Activa Bajo Nivel
+Warning Disabled,Aviso deshabilitado
+High Value,Valor Alto
+Alert High,Alto Nivel Alerta
+Active High,Alerta Activa Alto Nivel
+Last Alert Time,Ultima Hora de la Alerta
+Device Shortcut,Nombre Corto Dispositivo
+CN Device,Dispositivo
+Device,Dispositivo
+Data Session,Sesión de Datos
+Alert Log,Registro Alerta
+Device Log,Registro Dispositivo
+SMS Log,Registro SMS
+Session Type,Tipo de Sesión
+Recording,Registrando
+Cellebration Start Date,Fecha de Inicio
+Instructors,Formadores
+Participants Number,N.º Participantes
+Session Items,Elementos de Sesión
+Alert Log Items,Elementos de Alerta
+From Time,Desde Hora
+To Time,Hasta Hora
+Alert Type,Tipo de Alerta
+By SMS,por SMS
+By Email,por Email
+CN Device Log,Registro Dispositivo
+Chart 1 to Pic,Gráfico 1 a Imagen
+Chart 2 to Pic,Gráfico 2 a Imagen
+Log Item,Elementos Registro
+Data Date,Fecha de Dato
+Organization,Organización
+Identification code in Uppercase: Country Abbreviation (2 digits) plus Tax VAT,Codigo Identificativo en Mayúsculas: Abreviatura de País (2 digitos) mas N.º IVA
