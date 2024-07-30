@@ -161,30 +161,6 @@
   ]
  },
  {
-  "description": "K6/K6P Beacon - AM2302",
-  "docstatus": 0,
-  "doctype": "CN Sensor Type",
-  "modified": "2024-05-24 20:13:14.326437",
-  "name": "th",
-  "title": "th",
-  "var_item": [
-   {
-    "description": null,
-    "parent": "th",
-    "parentfield": "var_item",
-    "parenttype": "CN Sensor Type",
-    "sensor_var": "Temperature"
-   },
-   {
-    "description": null,
-    "parent": "th",
-    "parentfield": "var_item",
-    "parenttype": "CN Sensor Type",
-    "sensor_var": "Humidity"
-   }
-  ]
- },
- {
   "description": "UPS",
   "docstatus": 0,
   "doctype": "CN Sensor Type",
@@ -404,6 +380,30 @@
     "parentfield": "var_item",
     "parenttype": "CN Sensor Type",
     "sensor_var": "Current"
+   }
+  ]
+ },
+ {
+  "description": "K6/K6P Beacon - AM2302",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:13:14.326437",
+  "name": "th",
+  "title": "th",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "th",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Temperature"
+   },
+   {
+    "description": null,
+    "parent": "th",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Humidity"
    }
   ]
  },

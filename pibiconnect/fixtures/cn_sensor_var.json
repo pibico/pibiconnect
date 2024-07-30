@@ -51,16 +51,6 @@
  },
  {
   "chart_type": "None",
-  "description": "Humidity",
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-05-24 19:54:02.742778",
-  "name": "Humidity",
-  "title": "Humidity",
-  "uom": "%"
- },
- {
-  "chart_type": "None",
   "description": "Pressure",
   "docstatus": 0,
   "doctype": "CN Sensor Var",
@@ -208,6 +198,16 @@
   "name": "Voltage",
   "title": "Voltage",
   "uom": "V"
+ },
+ {
+  "chart_type": "None",
+  "description": "Humidity",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:54:02.742778",
+  "name": "Humidity",
+  "title": "Humidity",
+  "uom": "%"
  },
  {
   "chart_type": "None",
