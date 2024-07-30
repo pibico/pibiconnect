@@ -1,5 +1,25 @@
 [
  {
+  "alias": "Inteco",
+  "contacts": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "CN Client",
+  "modified": "2024-07-30 13:36:37.836500",
+  "name": "Inteco",
+  "organization": "Inteco Astur SL"
+ },
+ {
+  "alias": "Leolia",
+  "contacts": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "CN Client",
+  "modified": "2024-07-30 13:36:56.758249",
+  "name": "Leolia",
+  "organization": "Leolia Solutions SL"
+ },
+ {
   "alias": "pibiCo",
   "contacts": [
    {
