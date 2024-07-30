@@ -16,8 +16,8 @@
   "place_name",
   "assigned_to",
   "column_break_lufh",
-  "last_seen",
   "connected",
+  "connected_at",
   "section_break_ourc",
   "notes",
   "column_break_cnul",
@@ -97,11 +97,6 @@
   {
    "fieldname": "column_break_lufh",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "last_seen",
-   "fieldtype": "Datetime",
-   "label": "Last Seen"
   },
   {
    "default": "0",
@@ -216,11 +211,16 @@
   {
    "fieldname": "column_break_cnul",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "connected_at",
+   "fieldtype": "Datetime",
+   "label": "Connected at"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-22 19:25:38.099868",
+ "modified": "2024-07-30 11:37:15.697350",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "CN Device",

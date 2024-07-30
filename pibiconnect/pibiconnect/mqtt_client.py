@@ -56,7 +56,7 @@ def mqtt_client_loop():
 
 @frappe.whitelist()
 def start_mqtt():
-    job = enqueue('pibiconnect.pibiconnect.mqtt_client.mqtt_client_loop', timeout='5', queue='short', job_name='mqtt_start_job')
+    job = enqueue('pibiconnect.pibiconnect.mqtt_client.mqtt_client_loop', timeout=None, queue='long', job_name='mqtt_start_job')
     return {'status': 'started', 'job_id': job.id}
 
 @frappe.whitelist()
@@ -121,8 +121,8 @@ def start_mqtt_args(data):
     job = enqueue(
         'pibiconnect.pibiconnect.mqtt_client.mqtt_client_loop_args',
         data=json.dumps(data),  # Serialize the data as JSON
-        timeout='5',
-        queue='short',
+        timeout=None,
+        queue='long',
         job_name='mqtt_start_job'
     )
     return {'status': 'started', 'job_id': job.id}

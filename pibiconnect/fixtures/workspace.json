@@ -422,11 +422,11 @@
  },
  {
   "charts": [],
-  "content": "[{\"id\":\"lRvW9JcEET\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN MQTT Explorer\",\"col\":12}}]",
+  "content": "[{\"id\":\"lRvW9JcEET\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN MQTT\",\"col\":12}}]",
   "custom_blocks": [
    {
-    "custom_block_name": "CN MQTT Explorer",
-    "label": "CN MQTT Explorer",
+    "custom_block_name": "CN MQTT",
+    "label": "CN MQTT",
     "parent": "pibiConnect Explorer",
     "parentfield": "custom_blocks",
     "parenttype": "Workspace"
@@ -441,7 +441,7 @@
   "is_hidden": 0,
   "label": "pibiConnect Explorer",
   "links": [],
-  "modified": "2024-07-19 21:38:51.525285",
+  "modified": "2024-07-23 08:28:28.868225",
   "module": "pibiConnect",
   "name": "pibiConnect Explorer",
   "number_cards": [],

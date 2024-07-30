@@ -134,9 +134,9 @@ app_license = "mit"
 # ---------------
 
 #scheduler_events = {
-# 	"all": [
-# 		"pibiconnect.pibiconnect.mqtt_subscriber.start_mqtt_subscriber_job"
-# 	],
+#  "all": [
+#	    "pibiconnect.tasks.start_mqtt_client"
+#   ],
 # 	"daily": [
 # 		"pibiconnect.tasks.daily"
 # 	],
@@ -226,8 +226,6 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
-#after_migrate = ["pibiconnect.pibiconnect.mqtt_subscriber.start_mqtt_subscriber_job"]
 
 fixtures = [
   {
