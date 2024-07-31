@@ -195,23 +195,6 @@
   ]
  },
  {
-  "description": "DS18B20",
-  "docstatus": 0,
-  "doctype": "CN Sensor Type",
-  "modified": "2024-05-24 20:17:33.960168",
-  "name": "temp",
-  "title": "temp",
-  "var_item": [
-   {
-    "description": null,
-    "parent": "temp",
-    "parentfield": "var_item",
-    "parenttype": "CN Sensor Type",
-    "sensor_var": "Temperature"
-   }
-  ]
- },
- {
   "description": "HRSC04",
   "docstatus": 0,
   "doctype": "CN Sensor Type",
@@ -332,6 +315,23 @@
     "parentfield": "var_item",
     "parenttype": "CN Sensor Type",
     "sensor_var": "Sats"
+   }
+  ]
+ },
+ {
+  "description": "DS18B20",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-05-24 20:17:33.960168",
+  "name": "temp",
+  "title": "temp",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "temp",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Temperature"
    }
   ]
  },
