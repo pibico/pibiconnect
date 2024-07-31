@@ -126,3 +126,20 @@ def start_mqtt_args(data):
         job_name='mqtt_start_job'
     )
     return {'status': 'started', 'job_id': job.id}
+
+@frappe.whitelist()
+def ensure_mqtt_running(job_id=None):
+    if job_id:
+        rq_job = frappe.get_all(
+            "RQ Job",
+            filters={"job_id": job_id},
+            fields=["name", "status"]
+        )
+        if rq_job and rq_job[0].status == "started":
+            return {'status': 'running'}
+        else:
+            start_mqtt()
+            return {'status': 'restarted'}
+    else:
+        start_mqtt()
+        return {'status': 'restarted'}
