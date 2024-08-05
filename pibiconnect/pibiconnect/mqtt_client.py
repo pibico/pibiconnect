@@ -61,6 +61,8 @@ def start_mqtt():
 
 @frappe.whitelist()
 def stop_mqtt(job_name=None):
+    frappe.flags.ignore_permissions = True
+    
     if job_name:
         rq_job = frappe.get_all(
             "RQ Job",
@@ -71,7 +73,7 @@ def stop_mqtt(job_name=None):
             job_doc = frappe.get_doc("RQ Job", rq_job[0].name)
             job_doc.stop_job()
             frappe.logger().info(f"Stopped job: {job_doc.name}")
-        
+    
     # Additionally stop the client if it's running
     global client
     if client is not None and client.is_connected():
@@ -81,6 +83,8 @@ def stop_mqtt(job_name=None):
         frappe.logger().info("MQTT client disconnected")
     else:
         frappe.logger().info("MQTT client is not running")
+    
+    frappe.flags.ignore_permissions = False
     return {'status': 'stopped'}
 
 @frappe.whitelist()

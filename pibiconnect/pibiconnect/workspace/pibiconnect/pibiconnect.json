@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"KCn630HHFb\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN Sensor Manager\",\"col\":12}}]",
- "creation": "2024-07-11 08:24:38.013268",
+ "creation": "2024-08-05 13:58:50.110031",
  "custom_blocks": [
   {
    "custom_block_name": "CN Sensor Manager",
@@ -18,13 +18,13 @@
  "is_hidden": 0,
  "label": "pibiConnect",
  "links": [],
- "modified": "2024-07-19 21:46:29.239228",
+ "modified": "2024-08-05 14:03:37.681374",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "pibiConnect",
  "number_cards": [],
  "owner": "Administrator",
- "parent_page": "",
+ "parent_page": "Biblioteca y Soporte",
  "public": 1,
  "quick_lists": [],
  "roles": [
@@ -35,7 +35,7 @@
    "role": "MIoT User"
   }
  ],
- "sequence_id": 4.0,
+ "sequence_id": 52.0,
  "shortcuts": [],
  "title": "pibiConnect"
 }

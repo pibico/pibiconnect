@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"lRvW9JcEET\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN MQTT\",\"col\":12}}]",
- "creation": "2024-07-22 19:39:22.641384",
+ "creation": "2024-08-05 13:58:50.064811",
  "custom_blocks": [
   {
    "custom_block_name": "CN MQTT",
@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "pibiConnect Explorer",
  "links": [],
- "modified": "2024-07-23 08:28:28.868225",
+ "modified": "2024-08-05 14:03:37.727203",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "pibiConnect Explorer",
@@ -35,7 +35,7 @@
    "role": "MIoT User"
   }
  ],
- "sequence_id": 5.0,
+ "sequence_id": 53.0,
  "shortcuts": [],
  "title": "pibiConnect Explorer"
 }

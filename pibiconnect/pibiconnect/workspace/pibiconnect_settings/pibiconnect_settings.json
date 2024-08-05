@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"oT2LY6d7HE\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Ajustes ConectaIoT</span>\",\"col\":12}},{\"id\":\"pIx8tR6pBh\",\"type\":\"card\",\"data\":{\"card_name\":\"Devices\",\"col\":4}},{\"id\":\"3zYvyao5BC\",\"type\":\"card\",\"data\":{\"card_name\":\"Documentos\",\"col\":4}},{\"id\":\"zzfRi9K00M\",\"type\":\"card\",\"data\":{\"card_name\":\"Channels\",\"col\":4}}]",
- "creation": "2024-07-22 19:39:22.594746",
+ "creation": "2024-08-05 13:58:50.013859",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -211,7 +211,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-07-22 19:40:11.918243",
+ "modified": "2024-08-05 14:03:37.766979",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "pibiConnect Settings",
@@ -225,7 +225,7 @@
    "role": "MIoT Administrator"
   }
  ],
- "sequence_id": 6.0,
+ "sequence_id": 54.0,
  "shortcuts": [],
  "title": "pibiConnect Settings"
 }
