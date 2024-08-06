@@ -56,37 +56,49 @@ def mqtt_client_loop():
 
 @frappe.whitelist()
 def start_mqtt():
-    job = enqueue('pibiconnect.pibiconnect.mqtt_client.mqtt_client_loop', timeout=None, queue='long', job_name='mqtt_start_job')
-    return {'status': 'started', 'job_id': job.id}
+    global client
+    if client:
+        frappe.logger().info("MQTT client already running")
+        return {'status': 'already running'}
+    
+    try:
+        job = enqueue('pibiconnect.pibiconnect.mqtt_client.mqtt_client_loop', timeout=None, queue='long', job_name='mqtt_start_job')
+        return {'status': 'started', 'job_id': job.id}
+    except Exception as e:
+        frappe.logger().error(f"Error starting MQTT client: {str(e)}")
+        return {'status': 'error', 'message': str(e)}
 
 @frappe.whitelist()
 def stop_mqtt(job_name=None):
-    frappe.flags.ignore_permissions = True
-    
-    if job_name:
-        rq_job = frappe.get_all(
-            "RQ Job",
-            filters={"job_name": job_name, "status": "started"},
-            fields=["name"]
-        )
-        if rq_job:
-            job_doc = frappe.get_doc("RQ Job", rq_job[0].name)
-            job_doc.stop_job()
-            frappe.logger().info(f"Stopped job: {job_doc.name}")
-    
-    # Additionally stop the client if it's running
     global client
-    if client is not None and client.is_connected():
-        client.loop_stop()
-        client.disconnect()
-        client = None
-        frappe.logger().info("MQTT client disconnected")
-    else:
-        frappe.logger().info("MQTT client is not running")
+    if job_name:
+        try:
+            # Check if the table exists before attempting to delete
+            table_exists = frappe.db.sql(
+                "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name = 'tabRQ Job'",
+                as_list=True
+            )[0][0]
+            
+            if table_exists:
+                frappe.db.sql("DELETE FROM `tabRQ Job` WHERE job_name=%s", (job_name,))
+                frappe.db.commit()
+            else:
+                frappe.logger().warning("Table 'tabRQ Job' does not exist. Skipping job deletion.")
+        except Exception as e:
+            frappe.logger().error(f"Error deleting job from database: {str(e)}")
     
-    frappe.flags.ignore_permissions = False
+    if client:
+        try:
+            client.loop_stop()
+            client.disconnect()
+            frappe.logger().info("MQTT client disconnected")
+        except Exception as e:
+            frappe.logger().error(f"Error disconnecting MQTT client: {str(e)}")
+        finally:
+            client = None
+    
     return {'status': 'stopped'}
-
+    
 @frappe.whitelist()
 def status():
     global client
@@ -106,17 +118,16 @@ def setup_mqtt_client_args(data):
     if data.get('validate_cert'):
         client.tls_set()  # Add appropriate arguments if necessary
 
-def mqtt_client_loop_args(data):
-    if isinstance(data, str):
-        data = json.loads(data)  # Deserialize the JSON data if it's a string
+def mqtt_client_loop():
     global client
     if client is None:
-        setup_mqtt_client_args(data)
+        setup_mqtt_client()
     try:
-        client.connect(data['host'], int(data['port']), 60)
+        client.connect(MQTT_BROKER, MQTT_PORT, 60)
         client.loop_forever()
     except Exception as e:
         frappe.logger().error(f"Error connecting to MQTT broker: {e}")
+        client = None
 
 @frappe.whitelist()
 def start_mqtt_args(data):
