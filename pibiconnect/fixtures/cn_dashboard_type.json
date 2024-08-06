@@ -3,14 +3,6 @@
   "description": null,
   "docstatus": 0,
   "doctype": "CN Dashboard Type",
-  "modified": "2024-05-24 17:05:15.187663",
-  "name": "Home Assistant",
-  "title": "Home Assistant"
- },
- {
-  "description": null,
-  "docstatus": 0,
-  "doctype": "CN Dashboard Type",
   "modified": "2024-05-24 17:04:59.455517",
   "name": "Maintenance",
   "title": "Maintenance"
