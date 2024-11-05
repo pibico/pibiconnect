@@ -20,7 +20,7 @@
   "connected_at",
   "section_break_ourc",
   "notes",
-  "column_break_cnul",
+  "section_break_xytm",
   "location",
   "sensor_details_tab",
   "sensor_info_section",
@@ -209,18 +209,18 @@
    "options": "CN Alert Item"
   },
   {
-   "fieldname": "column_break_cnul",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "connected_at",
    "fieldtype": "Datetime",
    "label": "Connected at"
+  },
+  {
+   "fieldname": "section_break_xytm",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-30 11:37:15.697350",
+ "modified": "2024-11-05 22:03:56.152644",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "CN Device",

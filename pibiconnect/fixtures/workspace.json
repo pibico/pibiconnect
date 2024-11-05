@@ -1,7 +1,7 @@
 [
  {
   "charts": [],
-  "content": "[{\"id\":\"oT2LY6d7HE\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Ajustes ConectaIoT</span>\",\"col\":12}},{\"id\":\"pIx8tR6pBh\",\"type\":\"card\",\"data\":{\"card_name\":\"Devices\",\"col\":4}},{\"id\":\"3zYvyao5BC\",\"type\":\"card\",\"data\":{\"card_name\":\"Documentos\",\"col\":4}},{\"id\":\"zzfRi9K00M\",\"type\":\"card\",\"data\":{\"card_name\":\"Channels\",\"col\":4}}]",
+  "content": "[{\"id\":\"eP45NFSxOt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Panel ConectaIoT\",\"col\":3}},{\"id\":\"TdrmXs9_DY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"pIx8tR6pBh\",\"type\":\"card\",\"data\":{\"card_name\":\"Devices\",\"col\":4}},{\"id\":\"3zYvyao5BC\",\"type\":\"card\",\"data\":{\"card_name\":\"Documentos\",\"col\":4}},{\"id\":\"zzfRi9K00M\",\"type\":\"card\",\"data\":{\"card_name\":\"Channels\",\"col\":4}}]",
   "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
@@ -223,7 +223,7 @@
     "icon": null,
     "is_query_report": 0,
     "label": "Documentos",
-    "link_count": 7,
+    "link_count": 5,
     "link_to": null,
     "link_type": "DocType",
     "onboard": 0,
@@ -232,23 +232,6 @@
     "parentfield": "links",
     "parenttype": "Workspace",
     "type": "Card Break"
-   },
-   {
-    "dependencies": null,
-    "description": null,
-    "hidden": 0,
-    "icon": null,
-    "is_query_report": 0,
-    "label": "Tipo de Panel",
-    "link_count": 0,
-    "link_to": "CN Dashboard Type",
-    "link_type": "DocType",
-    "onboard": 0,
-    "only_for": null,
-    "parent": "pibiConnect Settings",
-    "parentfield": "links",
-    "parenttype": "Workspace",
-    "type": "Link"
    },
    {
     "dependencies": null,
@@ -276,23 +259,6 @@
     "label": "Lugar",
     "link_count": 0,
     "link_to": "CN Place",
-    "link_type": "DocType",
-    "onboard": 0,
-    "only_for": null,
-    "parent": "pibiConnect Settings",
-    "parentfield": "links",
-    "parenttype": "Workspace",
-    "type": "Link"
-   },
-   {
-    "dependencies": null,
-    "description": null,
-    "hidden": 0,
-    "icon": null,
-    "is_query_report": 0,
-    "label": "Zona",
-    "link_count": 0,
-    "link_to": "CN Zone",
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
@@ -353,7 +319,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2024-07-22 19:40:11.918243",
+  "modified": "2024-11-05 22:14:37.551216",
   "module": "pibiConnect",
   "name": "pibiConnect Settings",
   "number_cards": [],
@@ -370,55 +336,25 @@
    }
   ],
   "sequence_id": 6.0,
-  "shortcuts": [],
+  "shortcuts": [
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Panel ConectaIoT",
+    "link_to": null,
+    "parent": "pibiConnect Settings",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": null,
+    "type": "URL",
+    "url": "/app/pibiconnect"
+   }
+  ],
   "title": "pibiConnect Settings"
- },
- {
-  "charts": [],
-  "content": "[{\"id\":\"lRvW9JcEET\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN MQTT\",\"col\":12}}]",
-  "custom_blocks": [
-   {
-    "custom_block_name": "CN MQTT",
-    "label": "CN MQTT",
-    "parent": "pibiConnect Explorer",
-    "parentfield": "custom_blocks",
-    "parenttype": "Workspace"
-   }
-  ],
-  "docstatus": 0,
-  "doctype": "Workspace",
-  "for_user": "",
-  "hide_custom": 0,
-  "icon": "integration",
-  "indicator_color": "",
-  "is_hidden": 0,
-  "label": "pibiConnect Explorer",
-  "links": [],
-  "modified": "2024-07-23 08:28:28.868225",
-  "module": "pibiConnect",
-  "name": "pibiConnect Explorer",
-  "number_cards": [],
-  "parent_page": "pibiConnect",
-  "public": 1,
-  "quick_lists": [],
-  "restrict_to_domain": null,
-  "roles": [
-   {
-    "parent": "pibiConnect Explorer",
-    "parentfield": "roles",
-    "parenttype": "Workspace",
-    "role": "MIoT Administrator"
-   },
-   {
-    "parent": "pibiConnect Explorer",
-    "parentfield": "roles",
-    "parenttype": "Workspace",
-    "role": "MIoT User"
-   }
-  ],
-  "sequence_id": 5.0,
-  "shortcuts": [],
-  "title": "pibiConnect Explorer"
  },
  {
   "charts": [],

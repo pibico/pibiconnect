@@ -367,23 +367,6 @@
   ]
  },
  {
-  "description": "ModBus Sensor",
-  "docstatus": 0,
-  "doctype": "CN Sensor Type",
-  "modified": "2024-07-22 14:38:44.467405",
-  "name": "row",
-  "title": "row",
-  "var_item": [
-   {
-    "description": null,
-    "parent": "row",
-    "parentfield": "var_item",
-    "parenttype": "CN Sensor Type",
-    "sensor_var": "Current"
-   }
-  ]
- },
- {
   "description": "K6/K6P Beacon - AM2302",
   "docstatus": 0,
   "doctype": "CN Sensor Type",
@@ -435,6 +418,23 @@
     "parentfield": "var_item",
     "parenttype": "CN Sensor Type",
     "sensor_var": "Disk"
+   }
+  ]
+ },
+ {
+  "description": "ModBus Sensor",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-07-22 14:38:44.467405",
+  "name": "row",
+  "title": "row",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "row",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "Current"
    }
   ]
  }

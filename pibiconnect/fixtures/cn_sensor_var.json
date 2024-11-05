@@ -191,16 +191,6 @@
  },
  {
   "chart_type": "None",
-  "description": "Battery Voltage",
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-05-24 19:55:38.475658",
-  "name": "Voltage",
-  "title": "Voltage",
-  "uom": "V"
- },
- {
-  "chart_type": "None",
   "description": "Humidity",
   "docstatus": 0,
   "doctype": "CN Sensor Var",
@@ -238,5 +228,15 @@
   "name": "Temperature",
   "title": "Temperature",
   "uom": "C"
+ },
+ {
+  "chart_type": "None",
+  "description": "Battery Voltage",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:55:38.475658",
+  "name": "Voltage",
+  "title": "Voltage",
+  "uom": "V"
  }
 ]
