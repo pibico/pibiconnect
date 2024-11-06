@@ -437,5 +437,36 @@
     "sensor_var": "current"
    }
   ]
+ },
+ {
+  "description": "mz-zh19",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-11-06 19:29:20.447471",
+  "name": "co2",
+  "title": "co2",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "co2",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "co2"
+   },
+   {
+    "description": null,
+    "parent": "co2",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "temperature"
+   },
+   {
+    "description": null,
+    "parent": "co2",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "humidity"
+   }
+  ]
  }
 ]

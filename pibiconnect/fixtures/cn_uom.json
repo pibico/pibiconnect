@@ -118,5 +118,13 @@
   "modified": "2024-05-24 19:43:09.175843",
   "name": "degrees",
   "title": "degrees"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-11-06 19:28:05.326804",
+  "name": "ppm",
+  "title": "ppm"
  }
 ]

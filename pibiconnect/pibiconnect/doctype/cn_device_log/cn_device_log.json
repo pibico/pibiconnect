@@ -34,7 +34,6 @@
    "fieldname": "data_session",
    "fieldtype": "Link",
    "hidden": 1,
-   "in_list_view": 1,
    "label": "Data Session",
    "options": "CN Data Session"
   },
@@ -62,7 +61,8 @@
   {
    "fieldname": "main_chart",
    "fieldtype": "HTML",
-   "label": "Main Chart"
+   "label": "Main Chart",
+   "options": "<div id=\"main_chart\"></div>"
   },
   {
    "fieldname": "main_pic",
@@ -76,7 +76,8 @@
   {
    "fieldname": "second_chart",
    "fieldtype": "HTML",
-   "label": "Second Chart"
+   "label": "Second Chart",
+   "options": "<div id=\"second_chart\"></div>"
   },
   {
    "fieldname": "second_pic",
@@ -107,7 +108,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-06 14:10:06.049407",
+ "modified": "2024-11-06 21:14:06.093404",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "CN Device Log",

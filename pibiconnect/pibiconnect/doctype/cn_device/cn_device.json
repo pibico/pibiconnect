@@ -18,11 +18,6 @@
   "column_break_lufh",
   "connected",
   "connected_at",
-  "section_break_ourc",
-  "notes",
-  "section_break_xytm",
-  "location",
-  "sensor_details_tab",
   "sensor_info_section",
   "sensor_type",
   "is_gateway",
@@ -32,8 +27,13 @@
   "wifi_mac",
   "ble_mac_address",
   "ip",
+  "sensor_details_tab",
   "current_data",
   "data_item",
+  "section_break_ourc",
+  "notes",
+  "section_break_xytm",
+  "location",
   "alert_info_tab",
   "warning_channels_section",
   "warning_item",
@@ -165,9 +165,11 @@
    "label": "Notes"
   },
   {
+   "default": "{\n \"type\":\"FeatureCollection\",\n \"features\":[\n   {\n    \"type\":\"Feature\",\n    \"properties\":{},\n    \"geometry\":{\n     \"type\":\"Point\",\n     \"coordinates\":[-5.8240153,43.4217836]\n     }\n   }\n  ]\n}",
    "fetch_from": "place.location",
    "fieldname": "location",
    "fieldtype": "Geolocation",
+   "hidden": 1,
    "label": "Location"
   },
   {
@@ -226,7 +228,7 @@
    "link_fieldname": "device"
   }
  ],
- "modified": "2024-11-06 16:45:21.795199",
+ "modified": "2024-11-06 22:36:50.281786",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "CN Device",
