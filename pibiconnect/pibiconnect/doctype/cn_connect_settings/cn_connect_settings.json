@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2024-11-06 17:02:44.123456",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "influxdb_section",
+  "influxdb_url",
+  "influxdb_token",
+  "influxdb_bucket",
+  "influxdb_org",
+  "column_break_5",
+  "last_run_section",
+  "last_data_collection",
+  "column_break_8",
+  "mqtt_section",
+  "mqtt_broker",
+  "mqtt_port",
+  "mqtt_user",
+  "mqtt_password",
+  "mqtt_topics",
+  "column_break_15",
+  "mqtt_qos",
+  "mqtt_retain"
+ ],
+ "fields": [
+  {
+   "fieldname": "influxdb_section",
+   "fieldtype": "Section Break",
+   "label": "InfluxDB Settings"
+  },
+  {
+   "fieldname": "influxdb_url",
+   "fieldtype": "Data",
+   "label": "InfluxDB URL"
+  },
+  {
+   "fieldname": "influxdb_token",
+   "fieldtype": "Password",
+   "label": "InfluxDB Token"
+  },
+  {
+   "fieldname": "influxdb_bucket",
+   "fieldtype": "Data",
+   "label": "InfluxDB Bucket"
+  },
+  {
+   "fieldname": "influxdb_org",
+   "fieldtype": "Data",
+   "label": "InfluxDB Organization"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_run_section",
+   "fieldtype": "Section Break",
+   "label": "Last Run Information"
+  },
+  {
+   "fieldname": "last_data_collection",
+   "fieldtype": "Datetime",
+   "label": "Last Data Collection Run",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mqtt_section",
+   "fieldtype": "Section Break",
+   "label": "MQTT Settings"
+  },
+  {
+   "fieldname": "mqtt_broker",
+   "fieldtype": "Data",
+   "label": "MQTT Broker"
+  },
+  {
+   "fieldname": "mqtt_port",
+   "fieldtype": "Int",
+   "label": "MQTT Port"
+  },
+  {
+   "fieldname": "mqtt_user",
+   "fieldtype": "Data",
+   "label": "MQTT User"
+  },
+  {
+   "fieldname": "mqtt_password",
+   "fieldtype": "Password",
+   "label": "MQTT Password"
+  },
+  {
+   "fieldname": "mqtt_topics",
+   "fieldtype": "Small Text",
+   "label": "MQTT Topics"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "mqtt_qos",
+   "fieldtype": "Select",
+   "label": "MQTT QoS",
+   "options": "0\n1\n2"
+  },
+  {
+   "default": "0",
+   "fieldname": "mqtt_retain",
+   "fieldtype": "Check",
+   "label": "MQTT Retain"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-11-06 17:02:44.123456",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "CN Connect Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "MIoT Administrator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

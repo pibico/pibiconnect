@@ -17,7 +17,7 @@
   "column_break_rnox",
   "second_chart",
   "second_pic",
-  "column_break_vgso",
+  "section_break_kmpn",
   "move",
   "log_data_tab",
   "log_item"
@@ -33,6 +33,7 @@
   {
    "fieldname": "data_session",
    "fieldtype": "Link",
+   "hidden": 1,
    "in_list_view": 1,
    "label": "Data Session",
    "options": "CN Data Session"
@@ -83,12 +84,9 @@
    "label": "Chart 2 to Pic"
   },
   {
-   "fieldname": "column_break_vgso",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "move",
    "fieldtype": "Geolocation",
+   "hidden": 1,
    "label": "Move"
   },
   {
@@ -101,11 +99,15 @@
    "fieldtype": "Table",
    "label": "Log Item",
    "options": "CN Log Item"
+  },
+  {
+   "fieldname": "section_break_kmpn",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-22 17:22:32.237608",
+ "modified": "2024-11-06 14:10:06.049407",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "CN Device Log",

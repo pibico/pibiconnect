@@ -1,2 +1,5 @@
 frappe
 paho-mqtt
+psutil
+influxdb-client
+pytz

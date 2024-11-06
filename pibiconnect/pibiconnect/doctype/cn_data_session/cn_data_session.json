@@ -10,12 +10,13 @@
   "session_type",
   "is_active",
   "recording",
+  "column_break_rsuu",
+  "description",
+  "section_break_ztsz",
   "column_break_veok",
   "cellebration_date",
   "instructors",
   "participants",
-  "column_break_rsuu",
-  "description",
   "section_break_lmtg",
   "session_item"
  ],
@@ -51,16 +52,19 @@
   {
    "fieldname": "cellebration_date",
    "fieldtype": "Datetime",
+   "hidden": 1,
    "label": "Cellebration Start Date"
   },
   {
    "fieldname": "instructors",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Instructors"
   },
   {
    "fieldname": "participants",
    "fieldtype": "Int",
+   "hidden": 1,
    "label": "Participants Number"
   },
   {
@@ -81,11 +85,15 @@
    "fieldtype": "Table",
    "label": "Session Items",
    "options": "CN Session Item"
+  },
+  {
+   "fieldname": "section_break_ztsz",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-22 17:13:30.953312",
+ "modified": "2024-11-05 22:40:53.057313",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "CN Data Session",

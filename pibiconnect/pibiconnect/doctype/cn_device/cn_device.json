@@ -219,8 +219,14 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-11-05 22:03:56.152644",
+ "links": [
+  {
+   "group": "Data",
+   "link_doctype": "CN Device Log",
+   "link_fieldname": "device"
+  }
+ ],
+ "modified": "2024-11-06 16:45:21.795199",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "CN Device",

@@ -69,6 +69,7 @@ app_license = "mit"
 
 # before_install = "pibiconnect.install.before_install"
 # after_install = "pibiconnect.install.after_install"
+# on_app_update = "pibiconnect.install.on_app_update"
 
 # Uninstallation
 # ------------
@@ -133,7 +134,7 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-#scheduler_events = {
+scheduler_events = {
 #  "all": [
 #	    "pibiconnect.tasks.start_mqtt_client"
 #   ],
@@ -149,7 +150,12 @@ app_license = "mit"
 # 	"monthly": [
 # 		"pibiconnect.tasks.monthly"
 # 	],
-#}
+#    "cron": {
+#       "*/3 * * * *": [
+#         "pibiconnect.mqtt_influx_worker.doctype.mqtt_influx_settings.mqtt_influx_settings.check_worker_status"
+#       ]
+#    }
+}
 
 # Testing
 # -------
