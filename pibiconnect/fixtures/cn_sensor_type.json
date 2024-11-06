@@ -9,15 +9,24 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Current"
+    "parent": "energy",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "current"
    },
    {
     "description": null,
-    "sensor_var": "Voltage"
+    "parent": "energy",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "voltage"
    },
    {
     "description": null,
-    "sensor_var": "Power"
+    "parent": "energy",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "power"
    }
   ]
  },
@@ -31,7 +40,10 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Status"
+    "parent": "plug",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "status"
    }
   ]
  },
@@ -45,11 +57,17 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Direction"
+    "parent": "wind",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "direction"
    },
    {
     "description": null,
-    "sensor_var": "Speed"
+    "parent": "wind",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "speed"
    }
   ]
  },
@@ -63,11 +81,17 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Charge"
+    "parent": "v",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "charge"
    },
    {
     "description": null,
-    "sensor_var": "Voltage"
+    "parent": "v",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "voltage"
    }
   ]
  },
@@ -81,7 +105,10 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Status"
+    "parent": "door",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "status"
    }
   ]
  },
@@ -95,15 +122,24 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Current"
+    "parent": "batt",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "current"
    },
    {
     "description": null,
-    "sensor_var": "Voltage"
+    "parent": "batt",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "voltage"
    },
    {
     "description": null,
-    "sensor_var": "Charge"
+    "parent": "batt",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "charge"
    }
   ]
  },
@@ -117,7 +153,10 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Flow"
+    "parent": "flow",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "flow"
    }
   ]
  },
@@ -131,7 +170,10 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Voltage"
+    "parent": "power",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "voltage"
    }
   ]
  },
@@ -145,7 +187,10 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Status"
+    "parent": "relay",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "status"
    }
   ]
  },
@@ -159,7 +204,10 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Volume"
+    "parent": "ut",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "volume"
    }
   ]
  },
@@ -173,19 +221,31 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Temperature"
+    "parent": "tphg",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "temperature"
    },
    {
     "description": null,
-    "sensor_var": "Pressure"
+    "parent": "tphg",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "pressure"
    },
    {
     "description": null,
-    "sensor_var": "Humidity"
+    "parent": "tphg",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "humidity"
    },
    {
     "description": null,
-    "sensor_var": "Iaq"
+    "parent": "tphg",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "iaq"
    }
   ]
  },
@@ -199,15 +259,24 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Pitch"
+    "parent": "imu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "pitch"
    },
    {
     "description": null,
-    "sensor_var": "Roll"
+    "parent": "imu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "roll"
    },
    {
     "description": null,
-    "sensor_var": "Heading"
+    "parent": "imu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "heading"
    }
   ]
  },
@@ -221,19 +290,31 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Position"
+    "parent": "gps",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "position"
    },
    {
     "description": null,
-    "sensor_var": "Cog"
+    "parent": "gps",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "cog"
    },
    {
     "description": null,
-    "sensor_var": "Sog"
+    "parent": "gps",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "sog"
    },
    {
     "description": null,
-    "sensor_var": "Sats"
+    "parent": "gps",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "sats"
    }
   ]
  },
@@ -247,7 +328,10 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Temperature"
+    "parent": "temp",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "temperature"
    }
   ]
  },
@@ -261,15 +345,24 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Voltage"
+    "parent": "uni",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "voltage"
    },
    {
     "description": null,
-    "sensor_var": "Current"
+    "parent": "uni",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "current"
    },
    {
     "description": null,
-    "sensor_var": "Status"
+    "parent": "uni",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "status"
    }
   ]
  },
@@ -283,11 +376,17 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Temperature"
+    "parent": "th",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "temperature"
    },
    {
     "description": null,
-    "sensor_var": "Humidity"
+    "parent": "th",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "humidity"
    }
   ]
  },
@@ -301,15 +400,24 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Temperature"
+    "parent": "cpu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "temperature"
    },
    {
     "description": null,
-    "sensor_var": "Memory"
+    "parent": "cpu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "memory"
    },
    {
     "description": null,
-    "sensor_var": "Disk"
+    "parent": "cpu",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "disk"
    }
   ]
  },
@@ -323,7 +431,10 @@
   "var_item": [
    {
     "description": null,
-    "sensor_var": "Current"
+    "parent": "row",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "current"
    }
   ]
  }

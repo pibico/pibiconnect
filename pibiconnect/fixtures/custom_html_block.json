@@ -8,9 +8,15 @@
   "private": 0,
   "roles": [
    {
+    "parent": "CN Sensor Manager",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
     "role": "MIoT Administrator"
    },
    {
+    "parent": "CN Sensor Manager",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
     "role": "MIoT User"
    }
   ],
@@ -26,6 +32,9 @@
   "private": 0,
   "roles": [
    {
+    "parent": "CN MQTT",
+    "parentfield": "roles",
+    "parenttype": "Custom HTML Block",
     "role": "MIoT Administrator"
    }
   ],

@@ -5,8 +5,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:50:34.601502",
-  "name": "Power",
-  "title": "Power",
+  "name": "power",
+  "title": "power",
   "uom": "W"
  },
  {
@@ -15,8 +15,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:52:07.910704",
-  "name": "Flow",
-  "title": "Flow",
+  "name": "flow",
+  "title": "flow",
   "uom": "lpm"
  },
  {
@@ -25,19 +25,9 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:53:10.215298",
-  "name": "Volume",
-  "title": "Volume",
+  "name": "volume",
+  "title": "volume",
   "uom": "l"
- },
- {
-  "chart_type": "None",
-  "description": "Gas Resistance",
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-05-24 19:53:26.243351",
-  "name": "Gas Resistance",
-  "title": "Gas Resistance",
-  "uom": "Ohm"
  },
  {
   "chart_type": "None",
@@ -45,8 +35,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:53:46.570145",
-  "name": "Iaq",
-  "title": "Iaq",
+  "name": "iaq",
+  "title": "iaq",
   "uom": "iaq"
  },
  {
@@ -55,8 +45,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:54:25.208125",
-  "name": "Pressure",
-  "title": "Pressure",
+  "name": "pressure",
+  "title": "pressure",
   "uom": "hPa"
  },
  {
@@ -65,8 +55,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:54:59.794221",
-  "name": "Direction",
-  "title": "Direction",
+  "name": "direction",
+  "title": "direction",
   "uom": "degrees"
  },
  {
@@ -75,8 +65,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:55:18.759720",
-  "name": "Speed",
-  "title": "Speed",
+  "name": "speed",
+  "title": "speed",
   "uom": "knot"
  },
  {
@@ -85,8 +75,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:55:52.535553",
-  "name": "Roll",
-  "title": "Roll",
+  "name": "roll",
+  "title": "roll",
   "uom": "degrees"
  },
  {
@@ -95,8 +85,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:56:09.759002",
-  "name": "Pitch",
-  "title": "Pitch",
+  "name": "pitch",
+  "title": "pitch",
   "uom": "degrees"
  },
  {
@@ -105,8 +95,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:56:29.849198",
-  "name": "Heading",
-  "title": "Heading",
+  "name": "heading",
+  "title": "heading",
   "uom": "degrees"
  },
  {
@@ -115,8 +105,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:56:50.752149",
-  "name": "Sats",
-  "title": "Sats",
+  "name": "sats",
+  "title": "sats",
   "uom": "units"
  },
  {
@@ -125,8 +115,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:57:12.524429",
-  "name": "Position",
-  "title": "Position",
+  "name": "position",
+  "title": "position",
   "uom": "latlng"
  },
  {
@@ -135,8 +125,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:57:34.061902",
-  "name": "Sog",
-  "title": "Sog",
+  "name": "sog",
+  "title": "sog",
   "uom": "knot"
  },
  {
@@ -145,8 +135,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:57:57.420876",
-  "name": "Cog",
-  "title": "Cog",
+  "name": "cog",
+  "title": "cog",
   "uom": "degrees"
  },
  {
@@ -155,19 +145,9 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:58:15.115232",
-  "name": "Charge",
-  "title": "Charge",
+  "name": "charge",
+  "title": "charge",
   "uom": "%"
- },
- {
-  "chart_type": "None",
-  "description": "Input Voltage",
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-05-24 19:58:33.001727",
-  "name": "Input",
-  "title": "Input",
-  "uom": "V"
  },
  {
   "chart_type": "None",
@@ -175,8 +155,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:52:25.243903",
-  "name": "Status",
-  "title": "Status",
+  "name": "status",
+  "title": "status",
   "uom": "boolean"
  },
  {
@@ -185,8 +165,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:51:04.223861",
-  "name": "Current",
-  "title": "Current",
+  "name": "current",
+  "title": "current",
   "uom": "mA"
  },
  {
@@ -195,8 +175,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:54:02.742778",
-  "name": "Humidity",
-  "title": "Humidity",
+  "name": "humidity",
+  "title": "humidity",
   "uom": "%"
  },
  {
@@ -205,8 +185,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:52:39.388463",
-  "name": "Disk",
-  "title": "Disk",
+  "name": "disk",
+  "title": "disk",
   "uom": "%"
  },
  {
@@ -215,8 +195,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:52:55.205494",
-  "name": "Memory",
-  "title": "Memory",
+  "name": "memory",
+  "title": "memory",
   "uom": "%"
  },
  {
@@ -225,8 +205,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:54:39.656159",
-  "name": "Temperature",
-  "title": "Temperature",
+  "name": "temperature",
+  "title": "temperature",
   "uom": "C"
  },
  {
@@ -235,8 +215,8 @@
   "docstatus": 0,
   "doctype": "CN Sensor Var",
   "modified": "2024-05-24 19:55:38.475658",
-  "name": "Voltage",
-  "title": "Voltage",
+  "name": "voltage",
+  "title": "voltage",
   "uom": "V"
  }
 ]

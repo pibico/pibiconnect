@@ -150,11 +150,11 @@ scheduler_events = {
 # 	"monthly": [
 # 		"pibiconnect.tasks.monthly"
 # 	],
-#    "cron": {
-#       "*/3 * * * *": [
-#         "pibiconnect.mqtt_influx_worker.doctype.mqtt_influx_settings.mqtt_influx_settings.check_worker_status"
-#       ]
-#    }
+    "cron": {
+       "*/5 * * * *": [
+         "pibiconnect.pibiconnect.collect_influx_data.collect_influx_data"
+       ]
+    }
 }
 
 # Testing
