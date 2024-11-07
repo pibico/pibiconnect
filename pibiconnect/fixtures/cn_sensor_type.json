@@ -422,23 +422,6 @@
   ]
  },
  {
-  "description": "ModBus Sensor",
-  "docstatus": 0,
-  "doctype": "CN Sensor Type",
-  "modified": "2024-07-22 14:38:44.467405",
-  "name": "row",
-  "title": "row",
-  "var_item": [
-   {
-    "description": null,
-    "parent": "row",
-    "parentfield": "var_item",
-    "parenttype": "CN Sensor Type",
-    "sensor_var": "current"
-   }
-  ]
- },
- {
   "description": "mz-zh19",
   "docstatus": 0,
   "doctype": "CN Sensor Type",
@@ -466,6 +449,23 @@
     "parentfield": "var_item",
     "parenttype": "CN Sensor Type",
     "sensor_var": "humidity"
+   }
+  ]
+ },
+ {
+  "description": "ModBus Sensor",
+  "docstatus": 0,
+  "doctype": "CN Sensor Type",
+  "modified": "2024-07-22 14:38:44.467405",
+  "name": "row",
+  "title": "row",
+  "var_item": [
+   {
+    "description": null,
+    "parent": "row",
+    "parentfield": "var_item",
+    "parenttype": "CN Sensor Type",
+    "sensor_var": "current"
    }
   ]
  }

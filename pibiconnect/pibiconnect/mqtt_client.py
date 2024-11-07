@@ -136,7 +136,7 @@ def start_mqtt_args(data):
     job = enqueue(
         'pibiconnect.pibiconnect.mqtt_client.mqtt_client_loop_args',
         data=json.dumps(data),  # Serialize the data as JSON
-        timeout=None,
+        timeout=0,
         queue='long',
         job_name='mqtt_start_job'
     )

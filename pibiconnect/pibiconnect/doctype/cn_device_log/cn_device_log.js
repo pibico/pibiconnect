@@ -8,16 +8,6 @@ frappe.ui.form.on('CN Device Log', {
   }
 });
 
-frappe.ui.form.on('CN Device Log', {
-  refresh: function(frm) {
-    create_chart(frm);
-    frm.add_custom_button(frappe.utils.icon("image","sm"), function() {
-      create_pic1(frm);
-      create_pic2(frm);
-    });
-  }
-});
-
 function create_chart(frm) {
   frappe.call({
     method: "pibiconnect.pibiconnect.custom.get_chart",
