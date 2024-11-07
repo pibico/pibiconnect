@@ -171,16 +171,6 @@
  },
  {
   "chart_type": "None",
-  "description": "Humidity",
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-05-24 19:54:02.742778",
-  "name": "humidity",
-  "title": "humidity",
-  "uom": "%"
- },
- {
-  "chart_type": "None",
   "description": "Disk",
   "docstatus": 0,
   "doctype": "CN Sensor Var",
@@ -197,6 +187,16 @@
   "modified": "2024-05-24 19:52:55.205494",
   "name": "memory",
   "title": "memory",
+  "uom": "%"
+ },
+ {
+  "chart_type": "None",
+  "description": "Humidity",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:54:02.742778",
+  "name": "humidity",
+  "title": "humidity",
   "uom": "%"
  },
  {
