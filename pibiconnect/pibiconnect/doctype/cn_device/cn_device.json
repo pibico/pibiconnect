@@ -226,9 +226,14 @@
    "group": "Data",
    "link_doctype": "CN Device Log",
    "link_fieldname": "device"
+  },
+  {
+   "group": "Alerts",
+   "link_doctype": "CN Alert Log",
+   "link_fieldname": "device"
   }
  ],
- "modified": "2024-11-06 22:36:50.281786",
+ "modified": "2024-11-07 22:22:56.359865",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "CN Device",

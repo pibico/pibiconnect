@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"eP45NFSxOt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Panel ConectaIoT\",\"col\":3}},{\"id\":\"TdrmXs9_DY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"pIx8tR6pBh\",\"type\":\"card\",\"data\":{\"card_name\":\"Dispositivos\",\"col\":4}},{\"id\":\"3zYvyao5BC\",\"type\":\"card\",\"data\":{\"card_name\":\"Documentos\",\"col\":4}},{\"id\":\"zzfRi9K00M\",\"type\":\"card\",\"data\":{\"card_name\":\"Canales\",\"col\":4}}]",
- "creation": "2024-11-06 17:01:14.905016",
+ "creation": "2024-11-07 12:23:54.204420",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -10,7 +10,7 @@
  "icon": "customization",
  "idx": 0,
  "indicator_color": "green",
- "is_hidden": 0,
+ "is_hidden": 1,
  "label": "pibiConnect Settings",
  "links": [
   {
@@ -191,7 +191,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-11-06 17:15:45.357037",
+ "modified": "2024-11-07 20:38:12.029069",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "pibiConnect Settings",
