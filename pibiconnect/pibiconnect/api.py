@@ -153,7 +153,6 @@ def manage_alert(sensor_var, value, cmd, reason, datadate, doc):
         alert_channel = []
         sms_recipients = []
         email_recipients = []
-        telegram_recipients = []
 
         for channel in channels:
             channel_type = channel.get('channel_type')
@@ -180,6 +179,12 @@ def manage_alert(sensor_var, value, cmd, reason, datadate, doc):
             filters={"name": alert_log_name},
             limit=1
         )
+
+        # Value coming is the threshold. Current Value is in data_item child table for sensor_var
+        threshold = str(value)
+        for item in device_doc.data_item:
+          if item.sensor_var == sensor_var:
+            value = str(item.value)
 
         if alert_log:
             alert_log = frappe.get_doc("CN Alert Log", alert_log_name)
