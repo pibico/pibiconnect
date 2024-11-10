@@ -5,7 +5,7 @@ frappe.ui.form.on('CN Device Log', {
         
         frm.remove_custom_button(frappe.utils.icon("reply", "sm"));
         frm.add_custom_button(frappe.utils.icon("reply", "sm"), function() {
-            window.location.href = '/app/pibiconnect';
+            window.location.href = '/app/pibiconnect?tab=LiveData';
         });
     }
 });

@@ -97,16 +97,60 @@ def batch_update_alert_states(alert_item_name, updates):
         return {"error": str(e)}
 
 @frappe.whitelist()
-def manage_alert(sensor_var, value, cmd, reason, datadate, doc):
+def manage_alert(sensor_var=None, value=None, command=None, reason=None, datadate=None, doc=None, **kwargs):
     """
     Manage alerts by logging them and sending notifications.
     """
     try:
-        # Input validation
-        if not all([sensor_var, value, cmd, reason, datadate, doc]):
-            frappe.throw(_("All parameters are required"))
+        # Log initial parameters
+        frappe.logger().debug(f"""
+        Initial parameters:
+        sensor_var: {sensor_var}
+        value: {value}
+        command: {command}
+        reason: {reason}
+        datadate: {datadate}
+        doc: {doc}
+        kwargs: {kwargs}
+        raw_data: {frappe.request.get_data() if frappe.request else 'No request data'}
+        form_dict: {frappe.local.form_dict if hasattr(frappe.local, 'form_dict') else 'No form dict'}
+        """)
 
-        if cmd not in ['high', 'low']:
+        # Extract parameters from form_dict if not provided in function call
+        if hasattr(frappe.local, 'form_dict'):
+            sensor_var = sensor_var or frappe.local.form_dict.get('sensor_var')
+            value = value or frappe.local.form_dict.get('value')
+            command = command or frappe.local.form_dict.get('command')
+            reason = reason or frappe.local.form_dict.get('reason')
+            datadate = datadate or frappe.local.form_dict.get('datadate')
+            doc = doc or frappe.local.form_dict.get('doc')
+
+        # Log final parameters
+        frappe.logger().debug(f"""
+        Final parameters:
+        sensor_var: {sensor_var}
+        value: {value}
+        command: {command}
+        reason: {reason}
+        datadate: {datadate}
+        doc: {doc}
+        """)
+
+        # Input validation with specific messages
+        missing_params = []
+        if not sensor_var: missing_params.append("sensor_var")
+        if not value: missing_params.append("value")
+        if not command: missing_params.append("command")
+        if not reason: missing_params.append("reason")
+        if not datadate: missing_params.append("datadate")
+        if not doc: missing_params.append("doc")
+
+        if missing_params:
+            error_msg = f"Missing required parameters: {', '.join(missing_params)}"
+            frappe.logger().error(error_msg)
+            frappe.throw(_(error_msg))
+
+        if command not in ['high', 'low']:
             frappe.throw(_("Invalid command. Must be 'high' or 'low'"))
 
         if reason not in ['start', 'finish']:
@@ -183,46 +227,71 @@ def manage_alert(sensor_var, value, cmd, reason, datadate, doc):
         # Value coming is the threshold. Current Value is in data_item child table for sensor_var
         threshold = str(value)
         for item in device_doc.data_item:
-          if item.sensor_var == sensor_var:
-            value = str(item.value)
+            if item.sensor_var == sensor_var:
+                value = str(item.value)
+
+        changes_made = False
 
         if alert_log:
             alert_log = frappe.get_doc("CN Alert Log", alert_log_name)
-            if alert_log.alert_log_item:  # Updated fieldname
+            if alert_log.alert_log_item:
                 do_start = True
-                for row in alert_log.alert_log_item:  # Updated fieldname
+                for row in alert_log.alert_log_item:
                     if row.sensor_var == sensor_var:
                         if not row.to_time and reason == 'finish':
                             do_start = False
                             row.to_time = parsed_date
-                            row.save()
-                            
+                            changes_made = True
+                            break  # Exit loop after finding matching item
+
                 if do_start and reason == 'start':
-                    alert_log.append("alert_log_item", {  # Updated fieldname
+                    alert_log.append("alert_log_item", {
                         'sensor_var': sensor_var,
                         'from_time': parsed_date,
                         'value': str(value),
-                        'alert_type': cmd,
+                        'alert_type': command,
                         'by_email': 'Email' in alert_channel,
                         'by_sms': 'SMS' in alert_channel
                     })
-                    alert_log.save()
+                    changes_made = True
+
+            if changes_made:
+                alert_log.save()
         else:
             # Create new alert log
             alert_log = frappe.get_doc({
                 "doctype": "CN Alert Log",
                 "device": device_doc.name,
                 "date": parsed_date.strftime("%Y-%m-%d"),
-                "alert_log_item": [{  # Updated fieldname
+                "alert_log_item": [{
                     'sensor_var': sensor_var,
                     'from_time': parsed_date,
                     'value': str(value),
-                    'alert_type': cmd,
+                    'alert_type': command,
                     'by_email': 'Email' in alert_channel,
                     'by_sms': 'SMS' in alert_channel
                 }]
             })
             alert_log.insert()
+            changes_made = True
+
+        if changes_made and reason == 'finish':
+            # Update the corresponding CN Alert Item to deactivate the alert
+            alert_item = frappe.db.get_value(
+                'CN Alert Item',
+                {'parent': doc, 'sensor_var': sensor_var},
+                ['name', 'active_low', 'active_high'],
+                as_dict=True
+            )
+
+            if alert_item:
+                alert_item_doc = frappe.get_doc('CN Alert Item', alert_item.name)
+                if command == 'low':
+                    alert_item_doc.active_low = 0
+                elif command == 'high':
+                    alert_item_doc.active_high = 0
+                alert_item_doc.last_alert_time = parsed_date
+                alert_item_doc.save()
 
         frappe.db.commit()
 
@@ -231,30 +300,30 @@ def manage_alert(sensor_var, value, cmd, reason, datadate, doc):
 
         # Prepare messages
         base_message = f"""
-        This message is generated by Automatic Alarm Monitoring on pibiConnect.
-        Site time: {date_alert}.
-        You are receiving this message because you are registered to receive alarms from pibiConnect.
-        To stop receiving these alerts, please disable or remove yourself from the recipients channel in the admin view.
+        Este mensaje se ha generado por el Sistema de Monitoreo de Alarmas Automaticas de pibiConnect.
+        Hora del lugar: {date_alert}.
+        Estás recibiendo este mensaje porque se te ha registrado para recibir alarmas de pibiConnect.
+        Para evitar recibir estas alertas, por favor solicitalo al Administrador del Sistema.
         """
 
         html_message = f"""
-        <p>This message is generated by Automatic Alarm Monitoring on pibiConnect.</p>
-        <p>Site time: {date_alert}.</p>
-        <p>You are receiving this message because you are registered to receive alarms from pibiConnect.</p>
-        <p>To stop receiving these alerts, please disable or remove yourself from the recipients channel in the admin view.</p>
+        <p>Este mensaje se ha generado por el Sistema de Monitoreo de Alarmas Automáticas de pibiConnect.</p>
+        <p>Hora del lugar: {date_alert}.</p>
+        <p>Estás recibiendo este mensaje porque se te ha registrado para recibir alarmas de pibiConnect.</p>
+        <p>Para evitar recibir estas alertas, por favor solicitalo al Administrador del Sistema.</p>
         """
 
         # Generate alert text
         if reason == 'start':
-            subject = f"PROBLEM - {device_doc.place}: Alert Started on {device_doc.alias}"
-            alert_text = f"{sensor_var} {'high' if cmd == 'high' else 'low'} by {value}{uom} at {date_alert}. Please check."
+            subject = f"PROBLEMA - {device_doc.place}: Alerta iniciada en {device_doc.alias}"
+            alert_text = f"{sensor_var} {'high' if command == 'high' else 'low'} con {value}{uom} a {date_alert}. Compruebalo."
         else:
-            subject = f"RECOVERY - {device_doc.place}: Alert Finished on {device_doc.alias}"
-            alert_text = f"{sensor_var} {'high' if cmd == 'high' else 'low'} finished by {value}{uom} at {date_alert}. Please check."
+            subject = f"RECUPERACIÓN - {device_doc.place}: Alerta finalizada en {device_doc.alias}"
+            alert_text = f"{sensor_var} {'high' if command == 'high' else 'low'} finalizada con {value}{uom} a {date_alert}. Compruebalo."
 
         # Send notifications
         if email_recipients:
-            email_text = f"[Email pibiConnect]: {alert_text} in {device_doc.alias} ({device_doc.place})<br>{html_message}"
+            email_text = f"[Email pibiConnect]: {alert_text} en {device_doc.alias} ({device_doc.place})<br>{html_message}"
             email_args = {
                 'recipients': email_recipients,
                 'sender': None,
@@ -262,12 +331,12 @@ def manage_alert(sensor_var, value, cmd, reason, datadate, doc):
                 'message': cstr(email_text),
                 'header': [_('pibiConnect Alert Information'), 'blue'],
                 'delayed': False,
-                'retry':3
+                'retry': 3
             }
-            frappe.enqueue(method=frappe.sendmail,queue='short',timeout=300,now=True,**email_args)  
+            frappe.enqueue(method=frappe.sendmail, queue='short', timeout=300, now=True, **email_args)  
             
         if sms_recipients:
-            sms_text = f"[SMS pibiConnect]: {alert_text} in {device_doc.alias} ({device_doc.place})\n{base_message}"
+            sms_text = f"[SMS pibiConnect]: {alert_text} en {device_doc.alias} ({device_doc.place})\n{base_message}"
             frappe.enqueue(
                 'frappe.core.doctype.sms_settings.sms_settings.send_sms',
                 receiver_list=sms_recipients,
