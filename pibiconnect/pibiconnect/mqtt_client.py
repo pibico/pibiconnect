@@ -62,7 +62,7 @@ def start_mqtt():
         return {'status': 'already running'}
     
     try:
-        job = enqueue('pibiconnect.pibiconnect.mqtt_client.mqtt_client_loop', timeout=None, queue='long', job_name='mqtt_start_job')
+        job = enqueue('pibiconnect.pibiconnect.mqtt_client.mqtt_client_loop', timeout=0, queue='long', job_name='mqtt_start_job')
         return {'status': 'started', 'job_id': job.id}
     except Exception as e:
         frappe.logger().error(f"Error starting MQTT client: {str(e)}")
