@@ -126,5 +126,13 @@
   "modified": "2024-11-06 19:28:05.326804",
   "name": "ppm",
   "title": "ppm"
+ },
+ {
+  "description": "Fluorescencia Lambda",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-11-11 15:26:59.526877",
+  "name": "f",
+  "title": "f"
  }
 ]

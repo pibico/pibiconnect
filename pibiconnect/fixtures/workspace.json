@@ -358,11 +358,11 @@
  },
  {
   "charts": [],
-  "content": "[{\"id\":\"KCn630HHFb\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN Sensor Manager\",\"col\":12}}]",
+  "content": "[{\"id\":\"KCn630HHFb\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN HydroSentinel\",\"col\":12}}]",
   "custom_blocks": [
    {
-    "custom_block_name": "CN Sensor Manager",
-    "label": "CN Sensor Manager",
+    "custom_block_name": "CN HydroSentinel",
+    "label": "CN HydroSentinel",
     "parent": "pibiConnect",
     "parentfield": "custom_blocks",
     "parenttype": "Workspace"
@@ -377,7 +377,7 @@
   "is_hidden": 0,
   "label": "pibiConnect",
   "links": [],
-  "modified": "2024-07-19 21:46:29.239228",
+  "modified": "2024-11-12 00:12:29.018950",
   "module": "pibiConnect",
   "name": "pibiConnect",
   "number_cards": [],

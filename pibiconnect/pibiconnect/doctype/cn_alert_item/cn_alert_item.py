@@ -46,7 +46,7 @@ class CNAlertItem(Document):
         finally:
             self.flags.in_alert_processing = False
 
-    def handle_alert_state_change(self, cmd, is_active, value):
+    def handle_alert_state_change(self, command, is_active, value):
         """
         Handle the state change for a specific alert type
         """
@@ -57,7 +57,7 @@ class CNAlertItem(Document):
         return manage_alert(
             sensor_var=self.sensor_var,
             value=value,
-            cmd=cmd,
+            command=command,
             reason=reason,
             datadate=current_time,
             doc=self.parent

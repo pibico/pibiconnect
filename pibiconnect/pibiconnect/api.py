@@ -300,16 +300,16 @@ def manage_alert(sensor_var=None, value=None, command=None, reason=None, datadat
 
         # Prepare messages
         base_message = f"""
-        Este mensaje se ha generado por el Sistema de Monitoreo de Alarmas Automaticas de pibiConnect.
+        Este mensaje se ha generado por el Sistema de Monitoreo de Alarmas Automaticas de ConectaIoT.
         Hora del lugar: {date_alert}.
-        Estás recibiendo este mensaje porque se te ha registrado para recibir alarmas de pibiConnect.
+        Estás recibiendo este mensaje porque se te ha registrado para recibir alarmas de ConectaIoT.
         Para evitar recibir estas alertas, por favor solicitalo al Administrador del Sistema.
         """
 
         html_message = f"""
-        <p>Este mensaje se ha generado por el Sistema de Monitoreo de Alarmas Automáticas de pibiConnect.</p>
+        <p>Este mensaje se ha generado por el Sistema de Monitoreo de Alarmas Automáticas de ConectaIoT.</p>
         <p>Hora del lugar: {date_alert}.</p>
-        <p>Estás recibiendo este mensaje porque se te ha registrado para recibir alarmas de pibiConnect.</p>
+        <p>Estás recibiendo este mensaje porque se te ha registrado para recibir alarmas de ConectaIoT.</p>
         <p>Para evitar recibir estas alertas, por favor solicitalo al Administrador del Sistema.</p>
         """
 
@@ -323,20 +323,20 @@ def manage_alert(sensor_var=None, value=None, command=None, reason=None, datadat
 
         # Send notifications
         if email_recipients:
-            email_text = f"[Email pibiConnect]: {alert_text} en {device_doc.alias} ({device_doc.place})<br>{html_message}"
+            email_text = f"[Email ConectaIoT]: {alert_text} en {device_doc.alias} ({device_doc.place})<br>{html_message}"
             email_args = {
                 'recipients': email_recipients,
                 'sender': None,
                 'subject': subject,
                 'message': cstr(email_text),
-                'header': [_('pibiConnect Alert Information'), 'blue'],
+                'header': [_('Información de Alertas ConectaIoT'), 'blue'],
                 'delayed': False,
                 'retry': 3
             }
             frappe.enqueue(method=frappe.sendmail, queue='short', timeout=300, now=True, **email_args)  
             
         if sms_recipients:
-            sms_text = f"[SMS pibiConnect]: {alert_text} en {device_doc.alias} ({device_doc.place})\n{base_message}"
+            sms_text = f"[SMS ConectaIoT]: {alert_text} en {device_doc.alias} ({device_doc.place})\n{base_message}"
             frappe.enqueue(
                 'frappe.core.doctype.sms_settings.sms_settings.send_sms',
                 receiver_list=sms_recipients,
@@ -355,4 +355,39 @@ def manage_alert(sensor_var=None, value=None, command=None, reason=None, datadat
             frappe.get_traceback(),
             f"Error in manage_alert: {str(e)}"
         )
+        return {"error": str(e)}
+
+@frappe.whitelist()
+def update_alert_threshold(device, sensor_var, threshold_type, value):
+    try:
+        # Get the alert item
+        alert_items = frappe.get_all(
+            "CN Alert Item",
+            filters={
+                "parent": device,
+                "sensor_var": sensor_var
+            },
+            fields=["name"]
+        )
+        
+        if not alert_items:
+            frappe.throw(_("Alert item not found"))
+            
+        alert_item = frappe.get_doc("CN Alert Item", alert_items[0].name)
+        
+        # Update the appropriate threshold
+        field_name = "high_value" if threshold_type == "high" else "low_value"
+        alert_item.set(field_name, float(value))
+        alert_item.save()
+        
+        frappe.db.commit()
+        
+        return {
+            "message": "Threshold updated successfully",
+            "alert_item": alert_item.name
+        }
+        
+    except Exception as e:
+        frappe.db.rollback()
+        frappe.log_error(frappe.get_traceback(), _("Error updating threshold"))
         return {"error": str(e)}
