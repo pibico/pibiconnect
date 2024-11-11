@@ -9,6 +9,7 @@
   "sensor_var",
   "uom",
   "alert_cooldown",
+  "stability_span",
   "column_break_ksce",
   "low_value",
   "alert_low",
@@ -103,12 +104,19 @@
    "fieldtype": "Datetime",
    "in_list_view": 1,
    "label": "Last Alert Time"
+  },
+  {
+   "default": "5",
+   "description": "Time in seconds required for stable values before triggering alert",
+   "fieldname": "stability_span",
+   "fieldtype": "Int",
+   "label": "Stability Span"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-22 13:03:40.957229",
+ "modified": "2024-11-12 00:43:50.028307",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "CN Alert Item",

@@ -391,3 +391,44 @@ def update_alert_threshold(device, sensor_var, threshold_type, value):
         frappe.db.rollback()
         frappe.log_error(frappe.get_traceback(), _("Error updating threshold"))
         return {"error": str(e)}
+
+@frappe.whitelist()
+def update_stability_span(device, sensor_var, stability_span):
+    try:
+        # Get the alert item
+        alert_items = frappe.get_all(
+            "CN Alert Item",
+            filters={
+                "parent": device,
+                "sensor_var": sensor_var
+            },
+            fields=["name"]
+        )
+        
+        if not alert_items:
+            frappe.throw(_("Alert item not found"))
+            
+        alert_item = frappe.get_doc("CN Alert Item", alert_items[0].name)
+        
+        # Update stability span
+        try:
+            stability_span = int(stability_span)
+            if stability_span < 1 or stability_span > 60:
+                frappe.throw(_("Stability span must be between 1 and 60 seconds"))
+        except ValueError:
+            frappe.throw(_("Invalid stability span value"))
+        
+        alert_item.stability_span = stability_span
+        alert_item.save()
+        
+        frappe.db.commit()
+        
+        return {
+            "message": "Stability span updated successfully",
+            "alert_item": alert_item.name
+        }
+        
+    except Exception as e:
+        frappe.db.rollback()
+        frappe.log_error(frappe.get_traceback(), _("Error updating stability span"))
+        return {"error": str(e)}
