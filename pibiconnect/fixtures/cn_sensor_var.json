@@ -211,16 +211,6 @@
  },
  {
   "chart_type": "None",
-  "description": null,
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-11-11 15:27:03.106830",
-  "name": "fluorescence",
-  "title": "fluorescence",
-  "uom": "f"
- },
- {
-  "chart_type": "None",
   "description": "Battery Voltage",
   "docstatus": 0,
   "doctype": "CN Sensor Var",
@@ -228,6 +218,16 @@
   "name": "voltage",
   "title": "voltage",
   "uom": "V"
+ },
+ {
+  "chart_type": "None",
+  "description": null,
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-11-11 15:27:03.106830",
+  "name": "fluorescence",
+  "title": "fluorescence",
+  "uom": "f"
  },
  {
   "chart_type": "None",
