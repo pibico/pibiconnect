@@ -211,16 +211,6 @@
  },
  {
   "chart_type": "None",
-  "description": null,
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-11-06 19:28:10.883493",
-  "name": "co2",
-  "title": "co2",
-  "uom": "ppm"
- },
- {
-  "chart_type": "None",
   "description": "Battery Voltage",
   "docstatus": 0,
   "doctype": "CN Sensor Var",
@@ -228,6 +218,16 @@
   "name": "voltage",
   "title": "voltage",
   "uom": "V"
+ },
+ {
+  "chart_type": "None",
+  "description": null,
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-11-06 19:28:10.883493",
+  "name": "co2",
+  "title": "co2",
+  "uom": "ppm"
  },
  {
   "chart_type": "None",

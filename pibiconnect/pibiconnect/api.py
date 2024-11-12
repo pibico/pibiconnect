@@ -1,4 +1,4 @@
-# File: pibiconnect/api.py
+# File: pibiconnect/pibiconnect/api.py
 
 import frappe
 from frappe import _
