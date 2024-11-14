@@ -151,7 +151,302 @@ class InfluxDataFetcher:
     except Exception as e:
       logger.error(f"Error fetching fields for {hostname}: {str(e)}")
       return []
-      
+
+class AlertHandler:
+    def __init__(self, device_doc, current_time):
+        """Initialize AlertHandler with device document and current time"""
+        self.device_doc = device_doc
+        # Ensure current_time is timezone-aware
+        if current_time.tzinfo is None:
+            self.current_time = pytz.timezone(get_system_timezone()).localize(current_time)
+        else:
+            self.current_time = current_time
+        self._alert_log = None
+
+    def _get_timezone(self):
+        """Get system timezone"""
+        return pytz.timezone(get_system_timezone())
+
+    def _localize_datetime(self, dt):
+        """Convert datetime to system timezone"""
+        if dt is None:
+            return None
+            
+        if isinstance(dt, str):
+            dt = get_datetime(dt)
+            
+        if dt.tzinfo is None:
+            return self._get_timezone().localize(dt)
+        return dt.astimezone(self._get_timezone())
+
+    def _strip_timezone(self, dt):
+        """Remove timezone info for database storage"""
+        if dt is None:
+            return None
+        if dt.tzinfo is not None:
+            dt = dt.astimezone(self._get_timezone())
+        return dt.replace(tzinfo=None)
+
+    def _get_alert_log(self):
+        """Get or create alert log for current date"""
+        try:
+            if not self._alert_log:
+                alert_log_name = self.current_time.strftime("%y%m%d") + "_" + self.device_doc.name
+                if frappe.db.exists("CN Alert Log", alert_log_name):
+                    self._alert_log = frappe.get_doc("CN Alert Log", alert_log_name)
+                else:
+                    self._alert_log = frappe.get_doc({
+                        "doctype": "CN Alert Log",
+                        "device": self.device_doc.name,
+                        "date": self.current_time.date(),
+                        "alert_log_item": []
+                    })
+                    self._alert_log.insert(ignore_permissions=True)
+            return self._alert_log
+        except Exception as e:
+            logger.error(f"Error getting alert log: {str(e)}")
+            return None
+
+    def _get_warning_channels(self):
+        """Get active warning channels for the device"""
+        try:
+            channels = frappe.db.sql("""
+                SELECT channel_type, email, mobile 
+                FROM `tabCN Warning Item`
+                WHERE parent = %s AND active = 1
+            """, self.device_doc.name, as_dict=True)
+            
+            return channels
+        except Exception as e:
+            logger.error(f"Error getting warning channels: {str(e)}")
+            return []
+
+    def manage_alert(self, sensor_var, current_value, alert_type, reason, threshold):
+        """Trigger alert notification"""
+        try:
+            current_time_naive = self._strip_timezone(self.current_time)
+            
+            logger.info(
+                f"Managing alert: sensor={sensor_var}, "
+                f"type={alert_type}, reason={reason}, "
+                f"value={current_value}, time={current_time_naive}"
+            )
+
+            # Get warning channels
+            channels = self._get_warning_channels()
+            
+            # Process channels
+            alert_channel = []
+            sms_recipients = []
+            email_recipients = []
+
+            for channel in channels:
+                channel_type = channel.get('channel_type')
+                if channel_type and channel_type not in alert_channel:
+                    alert_channel.append(channel_type)
+                    
+                if channel_type == 'Email' and channel.get('email'):
+                    if channel['email'] not in email_recipients:
+                        email_recipients.append(channel['email'])
+                        
+                if channel_type == 'SMS' and channel.get('mobile'):
+                    if channel['mobile'] not in sms_recipients:
+                        sms_recipients.append(channel['mobile'])
+
+            # Get UOM
+            uom = frappe.db.get_value("CN Sensor Var", sensor_var, "uom") or ""
+
+            # Format date for messages
+            date_alert = current_time_naive.strftime("%d/%m/%y %H:%M")
+
+            # Prepare messages
+            if reason == 'start':
+                subject = f"PROBLEMA - {self.device_doc.place}: Alerta iniciada en {self.device_doc.alias}"
+                alert_text = f"{sensor_var} {alert_type} con {current_value}{uom} a {date_alert}. Compruebalo."
+            else:
+                subject = f"RECUPERACIÓN - {self.device_doc.place}: Alerta finalizada en {self.device_doc.alias}"
+                alert_text = f"{sensor_var} {alert_type} finalizada con {current_value}{uom} a {date_alert}. Compruebalo."
+
+            # Send notifications
+            if email_recipients:
+                html_message = f"""
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+                    <div style="background-color: #f8f9fa; border-radius: 5px; padding: 15px; margin-bottom: 20px;">
+                        <h2 style="color: #1a73e8; margin: 0 0 10px 0;">{subject}</h2>
+                        <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px 0;">{alert_text}</p>
+                    </div>
+                    
+                    <div style="background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 5px; padding: 15px;">
+                        <p style="margin: 0 0 10px 0;">Este mensaje se ha generado por el Sistema de Monitoreo de Alarmas Automáticas de ConectaIoT.</p>
+                        <p style="margin: 0 0 10px 0;">Hora del lugar: {date_alert}</p>
+                        <p style="margin: 0 0 10px 0;">Estás recibiendo este mensaje porque se te ha registrado para recibir alarmas de ConectaIoT.</p>
+                        <p style="margin: 0;">Para evitar recibir estas alertas, por favor solicitalo al Administrador del Sistema.</p>
+                    </div>
+                </div>
+                """
+                
+                frappe.sendmail(
+                    recipients=email_recipients,
+                    subject=subject,
+                    message=html_message,
+                    header=['Información de Alertas ConectaIoT', 'blue']
+                )
+
+            if sms_recipients:
+                sms_text = f"""[SMS ConectaIoT]: {alert_text}
+Dispositivo: {self.device_doc.alias} ({self.device_doc.place})
+Hora del lugar: {date_alert}
+--
+Sistema de Monitoreo de Alarmas Automaticas de ConectaIoT
+Para desactivar alertas, contacte al Administrador"""
+
+                for recipient in sms_recipients:
+                    frappe.sendmail(
+                        recipients=[recipient],
+                        subject='SMS Alert',
+                        message=sms_text
+                    )
+
+            return True
+
+        except Exception as e:
+            logger.error(f"Error in manage_alert: {str(e)}")
+            return False
+
+    def process_value(self, sensor_var, current_value):
+        """Process a single sensor value and manage its alerts"""
+        try:
+            frappe.db.begin()
+            
+            # Get alert item directly as a document
+            alert_items = frappe.get_all(
+                "CN Alert Item",
+                filters={
+                    "parent": self.device_doc.name,
+                    "sensor_var": sensor_var,
+                    "warning_disabled": 0
+                },
+                fields=["name", "high_value", "low_value", "alert_high", "alert_low",
+                       "active_high", "active_low", "alert_cooldown", "last_alert_time"]
+            )
+            
+            if not alert_items:
+                frappe.db.commit()
+                return
+                
+            alert_item = frappe.get_doc("CN Alert Item", alert_items[0].name)
+            
+            changes = []
+            current_value = float(current_value)
+
+            # Check high alert condition
+            if alert_item.alert_high and alert_item.high_value is not None:
+                high_value = float(alert_item.high_value)
+                if current_value >= high_value and not alert_item.active_high:
+                    changes.append(("high", "start", high_value))
+                elif current_value < high_value and alert_item.active_high:
+                    changes.append(("high", "finish", high_value))
+
+            # Check low alert condition
+            if alert_item.alert_low and alert_item.low_value is not None:
+                low_value = float(alert_item.low_value)
+                if current_value <= low_value and not alert_item.active_low:
+                    changes.append(("low", "start", low_value))
+                elif current_value > low_value and alert_item.active_low:
+                    changes.append(("low", "finish", low_value))
+
+            if not changes:
+                frappe.db.commit()
+                return
+
+            # Check cooldown if there's a last alert time
+            if alert_item.last_alert_time:
+                last_alert = self._localize_datetime(alert_item.last_alert_time)
+                cooldown = int(alert_item.alert_cooldown or 0)
+                time_since_last = (self.current_time - last_alert).total_seconds()
+                
+                if time_since_last < cooldown:
+                    logger.info(
+                        f"Skipping alert due to cooldown: "
+                        f"time_since_last={time_since_last}s, cooldown={cooldown}s"
+                    )
+                    frappe.db.commit()
+                    return
+
+            alert_log = self._get_alert_log()
+            if not alert_log:
+                frappe.db.rollback()
+                return
+            
+            logger.info(
+                f"Processing alerts for {sensor_var}: "
+                f"value={current_value}, changes={changes}"
+            )
+
+            for alert_type, reason, threshold in changes:
+                try:
+                    # Update alert state in the document
+                    if alert_type == "high":
+                        alert_item.active_high = 1 if reason == "start" else 0
+                    else:
+                        alert_item.active_low = 1 if reason == "start" else 0
+
+                    # Update last alert time
+                    alert_item.last_alert_time = self._strip_timezone(self.current_time)
+                    alert_item.save(ignore_permissions=True)
+
+                    # Create log entry
+                    current_time_naive = self._strip_timezone(self.current_time)
+                    warning_channels = self._get_warning_channels()
+                    channel_types = [c.get('channel_type') for c in warning_channels]
+                    
+                    alert_log.append("alert_log_item", {
+                        "sensor_var": sensor_var,
+                        "from_time": current_time_naive if reason == "start" else None,
+                        "to_time": current_time_naive if reason == "finish" else None,
+                        "value": str(current_value),
+                        "alert_type": alert_type,
+                        "by_email": "Email" in channel_types,
+                        "by_sms": "SMS" in channel_types
+                    })
+                    alert_log.save(ignore_permissions=True)
+
+                    # Manage alert notification
+                    if self.manage_alert(
+                        sensor_var=sensor_var,
+                        current_value=current_value,
+                        alert_type=alert_type,
+                        reason=reason,
+                        threshold=threshold
+                    ):
+                        frappe.db.commit()
+                        logger.info(
+                            f"Alert processed successfully: {alert_type} {reason} for {sensor_var}, "
+                            f"value={current_value}, threshold={threshold}"
+                        )
+                    else:
+                        frappe.db.rollback()
+                        logger.error(
+                            f"Alert trigger failed, rolling back changes: "
+                            f"{alert_type} {reason} for {sensor_var}"
+                        )
+
+                except Exception as e:
+                    frappe.db.rollback()
+                    logger.error(
+                        f"Error processing alert change: {str(e)} - "
+                        f"type={alert_type}, reason={reason}"
+                    )
+                    continue
+
+        except Exception as e:
+            frappe.db.rollback()
+            logger.error(
+                f"Error processing alerts for {sensor_var}: {str(e)} - "
+                f"current_value={current_value}"
+            )
+            raise
+
 class DeviceManager:
   def __init__(self, influx_fetcher: InfluxDataFetcher, tz_handler: TimezoneHandler):
     self.influx = influx_fetcher
@@ -269,6 +564,11 @@ class DeviceManager:
               
               log_doc.save(ignore_permissions=True)
               frappe.db.commit()
+              
+              # Create AlertHandler with current time
+              current_time = self.tz.get_system_now()
+              alert_handler = AlertHandler(device_doc=device_doc, current_time=current_time)
+              alert_handler.process_value(sensor_var, latest_value)
 
           except Exception as e:
             logger.error(f"Error processing readings: {str(e)}")
