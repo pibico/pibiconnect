@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{device}-{sensor_var}",
+ "creation": "2024-11-15 08:42:05.980548",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "device",
+  "span_factor",
+  "column_break_wvdd",
+  "sensor_var",
+  "scale",
+  "column_break_lxhg",
+  "lower_span",
+  "higher_span"
+ ],
+ "fields": [
+  {
+   "fieldname": "device",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Device",
+   "options": "CN Device",
+   "reqd": 1
+  },
+  {
+   "fieldname": "span_factor",
+   "fieldtype": "Float",
+   "label": "Span Factor",
+   "precision": "3"
+  },
+  {
+   "fieldname": "column_break_wvdd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sensor_var",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sensor Var",
+   "options": "CN Sensor Var",
+   "reqd": 1
+  },
+  {
+   "default": "0-10V",
+   "fieldname": "scale",
+   "fieldtype": "Select",
+   "label": "Scale",
+   "options": "\n4-20mA\n0-10V"
+  },
+  {
+   "fieldname": "column_break_lxhg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lower_span",
+   "fieldtype": "Float",
+   "label": "Lower Span",
+   "precision": "3"
+  },
+  {
+   "fieldname": "higher_span",
+   "fieldtype": "Float",
+   "label": "Higher Span",
+   "precision": "3"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-15 08:45:07.715571",
+ "modified_by": "Administrator",
+ "module": "pibiConnect",
+ "name": "CN Span",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "MIoT Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "MIoT User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

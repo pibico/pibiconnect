@@ -257,7 +257,7 @@
     "icon": null,
     "is_query_report": 0,
     "label": "Dispositivos",
-    "link_count": 3,
+    "link_count": 4,
     "link_to": null,
     "link_type": "DocType",
     "onboard": 0,
@@ -317,9 +317,26 @@
     "parentfield": "links",
     "parenttype": "Workspace",
     "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "description": null,
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
+    "label": "Span",
+    "link_count": 0,
+    "link_to": "CN Span",
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "parent": "pibiConnect Settings",
+    "parentfield": "links",
+    "parenttype": "Workspace",
+    "type": "Link"
    }
   ],
-  "modified": "2024-11-07 20:38:12.029069",
+  "modified": "2024-11-15 08:45:35.540883",
   "module": "pibiConnect",
   "name": "pibiConnect Settings",
   "number_cards": [],
@@ -358,11 +375,11 @@
  },
  {
   "charts": [],
-  "content": "[{\"id\":\"KCn630HHFb\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN HydroSentinel\",\"col\":12}}]",
+  "content": "[{\"id\":\"KCn630HHFb\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN Sensor Manager\",\"col\":12}}]",
   "custom_blocks": [
    {
-    "custom_block_name": "CN HydroSentinel",
-    "label": "CN HydroSentinel",
+    "custom_block_name": "CN Sensor Manager",
+    "label": "CN Sensor Manager",
     "parent": "pibiConnect",
     "parentfield": "custom_blocks",
     "parenttype": "Workspace"
@@ -377,7 +394,7 @@
   "is_hidden": 0,
   "label": "pibiConnect",
   "links": [],
-  "modified": "2024-11-12 00:12:29.018950",
+  "modified": "2024-11-15 01:04:59.704561",
   "module": "pibiConnect",
   "name": "pibiConnect",
   "number_cards": [],

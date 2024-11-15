@@ -270,16 +270,16 @@ class AlertHandler:
             # Send notifications
             if email_recipients:
                 html_message = f"""
-                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-                    <div style="background-color: #f8f9fa; border-radius: 5px; padding: 15px; margin-bottom: 20px;">
-                        <h2 style="color: #1a73e8; margin: 0 0 10px 0;">{subject}</h2>
-                        <p style="font-size: 16px; line-height: 1.5; margin: 0 0 15px 0;">{alert_text}</p>
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 9px;">
+                    <div style="background-color: #f8f9fa; border-radius: 6px; padding: 9px; margin-bottom: 9px;">
+                        <h2 style="color: #1a73e8; margin: 0 0 3px 0;">{subject}</h2>
+                        <p style="font-size: 12px; line-height: 1.2; margin: 0 0 12px 0;">{alert_text}</p>
                     </div>
                     
-                    <div style="background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 5px; padding: 15px;">
-                        <p style="margin: 0 0 10px 0;">Este mensaje se ha generado por el Sistema de Monitoreo de Alarmas Automáticas de ConectaIoT.</p>
-                        <p style="margin: 0 0 10px 0;">Hora del lugar: {date_alert}</p>
-                        <p style="margin: 0 0 10px 0;">Estás recibiendo este mensaje porque se te ha registrado para recibir alarmas de ConectaIoT.</p>
+                    <div style="background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 9px; padding: 9px;">
+                        <p style="margin: 0 0 9px 0;">Este mensaje se ha generado por el Sistema de Monitoreo de Alarmas Automáticas de ConectaIoT.</p>
+                        <p style="margin: 0 0 9px 0;">Hora del lugar: {date_alert}</p>
+                        <p style="margin: 0 0 9px 0;">Estás recibiendo este mensaje porque se te ha registrado para recibir alarmas de ConectaIoT.</p>
                         <p style="margin: 0;">Para evitar recibir estas alertas, por favor solicitalo al Administrador del Sistema.</p>
                     </div>
                 </div>

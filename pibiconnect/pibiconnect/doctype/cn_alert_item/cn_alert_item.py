@@ -2,7 +2,6 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 from frappe.utils import now_datetime
-from pibiconnect.pibiconnect.api import manage_alert
 
 class CNAlertItem(Document):
     def validate(self):
@@ -54,11 +53,11 @@ class CNAlertItem(Document):
         # Use format without seconds
         current_time = now_datetime().strftime("%Y-%m-%d %H:%M")
 
-        return manage_alert(
-            sensor_var=self.sensor_var,
-            value=value,
-            command=command,
-            reason=reason,
-            datadate=current_time,
-            doc=self.parent
-        )
+        return {
+            "sensor_var": self.sensor_var,
+            "value": value,
+            "command": command,
+            "reason": reason,
+            "datadate": current_time,
+            "doc": self.parent
+        }

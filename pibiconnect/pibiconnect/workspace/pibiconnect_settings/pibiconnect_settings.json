@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"eP45NFSxOt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Panel ConectaIoT\",\"col\":3}},{\"id\":\"TdrmXs9_DY\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"pIx8tR6pBh\",\"type\":\"card\",\"data\":{\"card_name\":\"Dispositivos\",\"col\":4}},{\"id\":\"3zYvyao5BC\",\"type\":\"card\",\"data\":{\"card_name\":\"Documentos\",\"col\":4}},{\"id\":\"zzfRi9K00M\",\"type\":\"card\",\"data\":{\"card_name\":\"Canales\",\"col\":4}}]",
- "creation": "2024-11-07 12:23:54.204420",
+ "creation": "2024-11-12 15:16:51.882323",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -155,7 +155,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Dispositivos",
-   "link_count": 3,
+   "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -189,9 +189,19 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Span",
+   "link_count": 0,
+   "link_to": "CN Span",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-11-07 20:38:12.029069",
+ "modified": "2024-11-15 08:45:35.540883",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "pibiConnect Settings",

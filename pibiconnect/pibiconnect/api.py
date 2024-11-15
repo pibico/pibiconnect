@@ -97,7 +97,7 @@ def batch_update_alert_states(alert_item_name, updates):
         return {"error": str(e)}
 
 @frappe.whitelist()
-def manage_alert(sensor_var=None, value=None, command=None, reason=None, datadate=None, doc=None, **kwargs):
+def _manage_alert(sensor_var=None, value=None, command=None, reason=None, datadate=None, doc=None, **kwargs):
     """
     Manage alerts by logging them and sending notifications.
     """
