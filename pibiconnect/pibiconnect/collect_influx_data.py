@@ -455,19 +455,22 @@ class DeviceManager:
   def transform_with_span(self, device: str, sensor_var: str, voltage_value: float) -> float:
     """Transform voltage value using CN Span if available"""
     try:
-      span_exists = frappe.db.exists("CN Span", {
-        "device": device,
-        "sensor_var": sensor_var
-      })
-      
-      if span_exists:
-        span_doc = frappe.get_doc("CN Span", span_exists)
-        return span_doc.calculate_reading(voltage_value)
-      
-      return voltage_value
+        filters = [['device', '=', device], ['sensor_var', '=', sensor_var]]
+        span_name = frappe.db.get_value('CN Span', filters, 'name')
+        
+        if span_name:
+            span_doc = frappe.get_doc('CN Span', span_name)
+            # Only transform if spans are defined
+            if span_doc.higher_span and span_doc.lower_span:
+                calibration_factor = 0.00
+                # Ensure voltage is at least calibration_factor to avoid negative values
+                adjusted_voltage = max(voltage_value - calibration_factor, 0)
+                return span_doc.lower_span + (adjusted_voltage * span_doc.span_factor)
+            
+        return voltage_value
     except Exception as e:
-      logger.error(f"Error in span transformation: {str(e)}")
-      return voltage_value
+        logger.error(f"Error in span transformation: {str(e)}")
+        return voltage_value
 
   def update_device_data(self, device_doc: 'frappe.model.document.Document', last_run: datetime) -> None:
     try:
@@ -529,7 +532,7 @@ class DeviceManager:
 
             for reading in readings:
               try:
-                value = float(reading['value'])
+                raw_value = float(reading['value'])
                 # Only transform if span exists
                 value = self.transform_with_span(device_name, data_item.sensor_var, raw_value) if has_span else raw_value
                 
