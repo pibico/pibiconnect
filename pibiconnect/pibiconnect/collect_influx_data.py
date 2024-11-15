@@ -452,6 +452,23 @@ class DeviceManager:
     self.influx = influx_fetcher
     self.tz = tz_handler
 
+  def transform_with_span(self, device: str, sensor_var: str, voltage_value: float) -> float:
+    """Transform voltage value using CN Span if available"""
+    try:
+      span_exists = frappe.db.exists("CN Span", {
+        "device": device,
+        "sensor_var": sensor_var
+      })
+      
+      if span_exists:
+        span_doc = frappe.get_doc("CN Span", span_exists)
+        return span_doc.calculate_reading(voltage_value)
+      
+      return voltage_value
+    except Exception as e:
+      logger.error(f"Error in span transformation: {str(e)}")
+      return voltage_value
+
   def update_device_data(self, device_doc: 'frappe.model.document.Document', last_run: datetime) -> None:
     try:
       if not device_doc.hostname or not device_doc.data_item:
@@ -490,6 +507,12 @@ class DeviceManager:
         
         if sensor_var not in available_fields:
           continue
+        
+        # Check if span exists for this device/sensor combination
+        has_span = frappe.db.exists("CN Span", {
+          "device": device_name,
+          "sensor_var": data_item.sensor_var
+        })
 
         start_time = get_datetime(data_item.last_recorded) if data_item.last_recorded else last_run
         readings = self.influx.fetch_latest_readings(
@@ -507,6 +530,9 @@ class DeviceManager:
             for reading in readings:
               try:
                 value = float(reading['value'])
+                # Only transform if span exists
+                value = self.transform_with_span(device_name, data_item.sensor_var, raw_value) if has_span else raw_value
+                
                 values.append(value)
                 latest_time = reading['timestamp']
               except (ValueError, TypeError):

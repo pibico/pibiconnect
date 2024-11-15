@@ -22,5 +22,5 @@ class CNSpan(Document):
         if not self.higher_span and not self.lower_span:
             return voltage
             
-        calibration_factor = 0.30
+        calibration_factor = 0.0
         return self.lower_span + ((voltage - calibration_factor) * self.span_factor)
