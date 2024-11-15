@@ -382,7 +382,7 @@ Para desactivar alertas, contacte al Administrador"""
                     alert_log.append("alert_log_item", {
                         "sensor_var": sensor_var,
                         "from_time": current_time_naive,
-                        "value": str(display_value),  # Use transformed value for display
+                        "value": str(current_value),  # Use transformed value for display
                         "alert_type": alert_type,
                         "by_email": "Email" in channel_types,
                         "by_sms": "SMS" in channel_types
@@ -394,7 +394,7 @@ Para desactivar alertas, contacte al Administrador"""
 
                 if self.manage_alert(
                     sensor_var=sensor_var,
-                    current_value=display_value,  # Use transformed value for display
+                    current_value=current_value,  # Use transformed value for display
                     alert_type=alert_type,
                     reason=reason,
                     threshold=threshold
