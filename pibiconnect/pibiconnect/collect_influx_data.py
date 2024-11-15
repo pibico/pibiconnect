@@ -299,15 +299,11 @@ Para desactivar alertas, contacte al Administrador"""
             return False
 
     def process_value(self, sensor_var, current_value):
+      """Process a single sensor value and manage its alerts"""
       try:
         frappe.db.begin()
         
-        # Check for CN Span first
-        has_span = frappe.db.exists("CN Span", {
-            "device": self.device_doc.name,
-            "sensor_var": sensor_var
-        })
-        
+        # Get alert item
         alert_items = frappe.get_all(
             "CN Alert Item",
             filters={
@@ -324,16 +320,30 @@ Para desactivar alertas, contacte al Administrador"""
             return
             
         alert_item = frappe.get_doc("CN Alert Item", alert_items[0].name)
-        changes = []
         
-        # Get raw or transformed value for comparison
+        # Get span configuration
+        has_span = frappe.db.exists("CN Span", {
+            "device": self.device_doc.name,
+            "sensor_var": sensor_var
+        })
+
+        # Transform value if span exists
+        display_value = current_value
         comparison_value = current_value
+        
         if has_span:
             span_doc = frappe.get_doc("CN Span", has_span)
             calibration_factor = 0.30
-            adjusted_voltage = max(0, float(current_value) - calibration_factor)
-            comparison_value = span_doc.lower_span + (adjusted_voltage * span_doc.span_factor)
-
+            raw_value = float(current_value)
+            adjusted_voltage = max(0, raw_value - calibration_factor)
+            display_value = span_doc.lower_span + (adjusted_voltage * span_doc.span_factor)
+            
+            # For alert comparison, transform raw value to actual measurement
+            comparison_value = raw_value
+        
+        changes = []
+        
+        # Check high alert condition
         if alert_item.alert_high and alert_item.high_value is not None:
             high_value = float(alert_item.high_value)
             if comparison_value >= high_value and not alert_item.active_high:
@@ -341,6 +351,7 @@ Para desactivar alertas, contacte al Administrador"""
             elif comparison_value < high_value and alert_item.active_high:
                 changes.append(("high", "finish", high_value))
 
+        # Check low alert condition
         if alert_item.alert_low and alert_item.low_value is not None:
             low_value = float(alert_item.low_value)
             if comparison_value <= low_value and not alert_item.active_low:
@@ -352,6 +363,7 @@ Para desactivar alertas, contacte al Administrador"""
             frappe.db.commit()
             return
 
+        # Check cooldown
         if alert_item.last_alert_time:
             last_alert = self._localize_datetime(alert_item.last_alert_time)
             cooldown = int(alert_item.alert_cooldown or 0)
@@ -365,11 +377,6 @@ Para desactivar alertas, contacte al Administrador"""
         if not alert_log:
             frappe.db.rollback()
             return
-        
-        logger.info(
-            f"Processing alerts for {sensor_var}: "
-            f"value={current_value}, changes={changes}"
-        )
 
         for alert_type, reason, threshold in changes:
             try:
@@ -385,7 +392,7 @@ Para desactivar alertas, contacte al Administrador"""
                 warning_channels = self._get_warning_channels()
                 channel_types = [c.get('channel_type') for c in warning_channels]
 
-                # Find existing alert log item for this sensor
+                # Find existing alert log item
                 existing_alert = None
                 for log_item in alert_log.alert_log_item:
                     if (log_item.sensor_var == sensor_var and 
@@ -395,33 +402,27 @@ Para desactivar alertas, contacte al Administrador"""
                         break
 
                 if reason == "start":
-                    # Create new alert log item
                     alert_log.append("alert_log_item", {
                         "sensor_var": sensor_var,
                         "from_time": current_time_naive,
-                        "value": str(current_value),
+                        "value": str(display_value),  # Use transformed value for display
                         "alert_type": alert_type,
                         "by_email": "Email" in channel_types,
                         "by_sms": "SMS" in channel_types
                     })
                 elif reason == "finish" and existing_alert:
-                    # Update existing alert log item
                     existing_alert.to_time = current_time_naive
 
                 alert_log.save(ignore_permissions=True)
 
                 if self.manage_alert(
                     sensor_var=sensor_var,
-                    current_value=current_value,
+                    current_value=display_value,  # Use transformed value for display
                     alert_type=alert_type,
                     reason=reason,
                     threshold=threshold
                 ):
                     frappe.db.commit()
-                    logger.info(
-                        f"Alert processed successfully: {alert_type} {reason} for {sensor_var}, "
-                        f"value={current_value}, threshold={threshold}"
-                    )
                 else:
                     frappe.db.rollback()
 
