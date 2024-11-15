@@ -303,7 +303,6 @@ Para desactivar alertas, contacte al Administrador"""
       try:
         frappe.db.begin()
         
-        # Get alert item
         alert_items = frappe.get_all(
             "CN Alert Item",
             filters={
@@ -320,43 +319,21 @@ Para desactivar alertas, contacte al Administrador"""
             return
             
         alert_item = frappe.get_doc("CN Alert Item", alert_items[0].name)
-        
-        # Get span configuration
-        has_span = frappe.db.exists("CN Span", {
-            "device": self.device_doc.name,
-            "sensor_var": sensor_var
-        })
-
-        # Transform value if span exists
-        display_value = current_value
-        comparison_value = current_value
-        
-        if has_span:
-            span_doc = frappe.get_doc("CN Span", has_span)
-            calibration_factor = 0.30
-            raw_value = float(current_value)
-            adjusted_voltage = max(0, raw_value - calibration_factor)
-            display_value = span_doc.lower_span + (adjusted_voltage * span_doc.span_factor)
-            
-            # For alert comparison, transform raw value to actual measurement
-            comparison_value = raw_value
-        
         changes = []
         
-        # Check high alert condition
+        # Direct comparison with thresholds since value is already transformed
         if alert_item.alert_high and alert_item.high_value is not None:
             high_value = float(alert_item.high_value)
-            if comparison_value >= high_value and not alert_item.active_high:
+            if float(current_value) >= high_value and not alert_item.active_high:
                 changes.append(("high", "start", high_value))
-            elif comparison_value < high_value and alert_item.active_high:
+            elif float(current_value) < high_value and alert_item.active_high:
                 changes.append(("high", "finish", high_value))
 
-        # Check low alert condition
         if alert_item.alert_low and alert_item.low_value is not None:
             low_value = float(alert_item.low_value)
-            if comparison_value <= low_value and not alert_item.active_low:
+            if float(current_value) <= low_value and not alert_item.active_low:
                 changes.append(("low", "start", low_value))
-            elif comparison_value > low_value and alert_item.active_low:
+            elif float(current_value) > low_value and alert_item.active_low:
                 changes.append(("low", "finish", low_value))
 
         if not changes:
