@@ -201,16 +201,6 @@
  },
  {
   "chart_type": "None",
-  "description": null,
-  "docstatus": 0,
-  "doctype": "CN Sensor Var",
-  "modified": "2024-11-11 15:27:03.106830",
-  "name": "fluorescence",
-  "title": "fluorescence",
-  "uom": "f"
- },
- {
-  "chart_type": "None",
   "description": "Humidity",
   "docstatus": 0,
   "doctype": "CN Sensor Var",
@@ -238,5 +228,15 @@
   "name": "co2",
   "title": "co2",
   "uom": "ppm"
+ },
+ {
+  "chart_type": "None",
+  "description": null,
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-11-11 15:27:03.106830",
+  "name": "fluorescence",
+  "title": "fluorescence",
+  "uom": "f"
  }
 ]

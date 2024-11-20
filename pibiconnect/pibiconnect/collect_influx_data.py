@@ -4,6 +4,7 @@ from influxdb_client import InfluxDBClient
 from datetime import datetime, timedelta
 import pytz
 import logging
+import json
 from typing import Dict, List, Optional, Any, Tuple
 from frappe.utils import (
   now_datetime, get_datetime, add_to_date, get_datetime_str,
@@ -418,6 +419,33 @@ class DeviceManager:
     self.influx = influx_fetcher
     self.tz = tz_handler
 
+  def calculate_representative_value(self, values: List[float], timestamps: List[datetime]) -> float:
+    """Calculate weighted average giving more weight to recent values"""
+    if not values:
+      return 0
+      
+    if len(values) == 1:
+      return values[0]
+      
+    # Convert timestamps to seconds from earliest reading
+    start_time = min(timestamps)
+    time_diffs = [(t - start_time).total_seconds() for t in timestamps]
+    
+    # Calculate weights - more recent values get higher weights
+    max_diff = max(time_diffs)
+    if max_diff == 0:  # All readings at same time
+      weights = [1/len(values)] * len(values)
+    else:
+      weights = [diff/max_diff for diff in time_diffs]
+      # Normalize weights
+      weight_sum = sum(weights)
+      weights = [w/weight_sum for w in weights]
+    
+    # Calculate weighted average
+    weighted_sum = sum(value * weight for value, weight in zip(values, weights))
+    
+    return weighted_sum
+  
   def transform_with_span(self, device: str, sensor_var: str, voltage_value: float) -> float:
     """Transform voltage value using CN Span if available"""
     try:
@@ -451,7 +479,6 @@ class DeviceManager:
       if not available_fields:
         return
 
-      # Get or create log for today
       current_date = now_datetime().date()
       log_filters = {
         'device': device_name,
@@ -477,7 +504,6 @@ class DeviceManager:
         if sensor_var not in available_fields:
           continue
         
-        # Check if span exists for this device/sensor combination
         has_span = frappe.db.exists("CN Span", {
           "device": device_name,
           "sensor_var": data_item.sensor_var
@@ -494,30 +520,37 @@ class DeviceManager:
           window_readings += len(readings)
           try:
             values = []
+            timestamps = []
+            raw_data = []
             latest_time = None
 
             for reading in readings:
               try:
                 raw_value = float(reading['value'])
-                # Only transform if span exists
                 value = self.transform_with_span(device_name, data_item.sensor_var, raw_value) if has_span else raw_value
                 
                 values.append(value)
+                timestamps.append(reading['timestamp'])
                 latest_time = reading['timestamp']
+                
+                raw_data.append({
+                  'timestamp': self.tz.format_for_frappe(reading['timestamp']).strftime('%Y-%m-%d %H:%M:%S'),
+                  'value': str(value),
+                  'raw_value': str(raw_value) if has_span else None
+                })
               except (ValueError, TypeError):
                 continue
 
             if values and latest_time:
               reading_count = len(values)
-              latest_value = values[-1]
+              representative_value = self.calculate_representative_value(values, timestamps)
               window_avg = sum(values) / reading_count
               window_max = max(values)
               window_min = min(values)
               latest_time_system = self.tz.format_for_frappe(latest_time)
 
-              # Update data item with latest values and statistics
               frappe.db.set_value('CN Data Item', data_item.name, {
-                'value': str(latest_value),
+                'value': str(representative_value),
                 'last_recorded': latest_time_system,
                 'reading': (data_item.reading or 0) + reading_count,
                 'average': window_avg,
@@ -525,51 +558,42 @@ class DeviceManager:
                 'minimum': window_min
               }, update_modified=False)
 
-              # Update device status
               frappe.db.set_value('CN Device', device_name, {
                 'connected': 1,
                 'connected_at': latest_time_system
               }, update_modified=False)
 
-              # Update or create log item (only latest values, no statistics)
               existing_idx = None
               for idx, log_item in enumerate(log_doc.log_item):
                 if log_item.sensor_var.lower() == sensor_var:
                   existing_idx = idx
                   break
 
-              # If the item exists, append a new entry rather than replacing
+              new_log_item = {
+                'sensor_var': sensor_var,
+                'uom': data_item.uom,
+                'value': str(round(float(representative_value), 2)),
+                'data_date': latest_time_system,
+                'chart_type': self._get_chart_type(sensor_var),
+                'raw_data': json.dumps(raw_data)
+              }
+
               if existing_idx is not None:
-                log_doc.append('log_item', {
-                  'sensor_var': sensor_var,
-                  'uom': data_item.uom,
-                  'value': str(latest_value),
-                  'data_date': latest_time_system,
-                  'chart_type': self._get_chart_type(sensor_var)
-                })
+                log_doc.append('log_item', new_log_item)
               else:
-                # No need to check for existing entries, always append new log item
-                log_doc.append('log_item', {
-                  'sensor_var': sensor_var,
-                  'uom': data_item.uom,
-                  'value': str(latest_value),
-                  'data_date': latest_time_system,
-                  'chart_type': self._get_chart_type(sensor_var)
-                })
+                log_doc.append('log_item', new_log_item)
               
               log_doc.save(ignore_permissions=True)
               frappe.db.commit()
               
-              # Create AlertHandler with current time
               current_time = self.tz.get_system_now()
               alert_handler = AlertHandler(device_doc=device_doc, current_time=current_time)
-              alert_handler.process_value(sensor_var, latest_value)
+              alert_handler.process_value(sensor_var, representative_value)
 
           except Exception as e:
             logger.error(f"Error processing readings: {str(e)}")
             frappe.db.rollback()
 
-      # Update device connection status if no new data
       if window_readings == 0 and device_doc.connected:
         frappe.db.set_value('CN Device', device_name, {
           'connected': 0,
