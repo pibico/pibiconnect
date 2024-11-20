@@ -550,7 +550,7 @@ class DeviceManager:
               latest_time_system = self.tz.format_for_frappe(latest_time)
 
               frappe.db.set_value('CN Data Item', data_item.name, {
-                'value': str(representative_value),
+                'value': str(round(float(representative_value), 2)),
                 'last_recorded': latest_time_system,
                 'reading': (data_item.reading or 0) + reading_count,
                 'average': window_avg,
