@@ -1,5 +1,13 @@
 [
  {
+  "description": "Volts",
+  "docstatus": 0,
+  "doctype": "CN UOM",
+  "modified": "2024-05-24 19:43:24.630761",
+  "name": "voltage",
+  "title": "voltage"
+ },
+ {
   "description": "Watts",
   "docstatus": 0,
   "doctype": "CN UOM",

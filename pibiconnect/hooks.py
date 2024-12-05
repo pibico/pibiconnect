@@ -151,7 +151,7 @@ scheduler_events = {
 # 		"pibiconnect.tasks.monthly"
 # 	],
     "cron": {
-       "*/2 * * * *": [
+       "*/1 * * * *": [
          "pibiconnect.pibiconnect.collect_influx_data.collect_influx_data"
        ]
     }

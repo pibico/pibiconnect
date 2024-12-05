@@ -1,6 +1,26 @@
 [
  {
   "chart_type": "None",
+  "description": "Gas Resistance",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:53:26.243351",
+  "name": "Gas Resistance",
+  "title": "Gas Resistance",
+  "uom": "Ohm"
+ },
+ {
+  "chart_type": "None",
+  "description": "Input Voltage",
+  "docstatus": 0,
+  "doctype": "CN Sensor Var",
+  "modified": "2024-05-24 19:58:33.001727",
+  "name": "Input",
+  "title": "Input",
+  "uom": "voltage"
+ },
+ {
+  "chart_type": "None",
   "description": null,
   "docstatus": 0,
   "doctype": "CN Sensor Var",

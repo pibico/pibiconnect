@@ -1,11 +1,15 @@
 {
  "charts": [],
- "content": "[{\"id\":\"KCn630HHFb\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN HydroSentinel\",\"col\":12}}]",
- "creation": "2024-11-16 15:54:42.048248",
+ "content": "[{\"id\":\"KCn630HHFb\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"CN HydroSentinel\",\"col\":12}},{\"id\":\"ts_vXP-VDq\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"HS Footer\",\"col\":12}}]",
+ "creation": "2024-11-20 19:24:25.189169",
  "custom_blocks": [
   {
    "custom_block_name": "CN HydroSentinel",
    "label": "CN HydroSentinel"
+  },
+  {
+   "custom_block_name": "HS Footer",
+   "label": "HS Footer"
   }
  ],
  "docstatus": 0,
@@ -18,7 +22,7 @@
  "is_hidden": 0,
  "label": "pibiConnect",
  "links": [],
- "modified": "2024-11-16 18:49:20.294065",
+ "modified": "2024-12-05 12:40:23.614883",
  "modified_by": "Administrator",
  "module": "pibiConnect",
  "name": "pibiConnect",

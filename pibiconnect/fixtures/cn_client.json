@@ -1,5 +1,22 @@
 [
  {
+  "alias": "pibiCo",
+  "contacts": [
+   {
+    "contact": "Francisco José Aláez Diez",
+    "parent": "pibiCo",
+    "parentfield": "contacts",
+    "parenttype": "CN Client"
+   }
+  ],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "CN Client",
+  "modified": "2024-05-24 19:12:44.922676",
+  "name": "pibiCo",
+  "organization": "pibiCo Compañía de Inteligencia de Negocio y Control SL"
+ },
+ {
   "alias": "Leolia",
   "contacts": [],
   "disabled": 0,
